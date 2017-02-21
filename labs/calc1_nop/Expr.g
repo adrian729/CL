@@ -7,11 +7,20 @@ stat:   expr NEWLINE
     |   NEWLINE
     ;
 
-expr:   multExpr ('+' multExpr | '-' multExpr)*
+expr:   multExpr (('+' | '-') multExpr)*
     ;
 
-multExpr:   atom ('*' atom)*
-    ; 
+multExpr:   unRestExpr (('*' | '/') unRestExpr)*
+    ;
+
+unRestExpr: ('-' | ) potExpr
+    ;
+
+potExpr:   parExpr ('^' parExpr)*
+    ;
+
+parExpr:   atom | ('(' expr ')')
+    ;
 
 atom:   INT
     |   ID
