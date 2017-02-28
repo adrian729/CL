@@ -37,9 +37,8 @@ unRestExpr returns [int value]
         )
     ;
 
-/** S'HA D'ARREGLAR! HA DE TENIR PRIORITAT PER LA DRETA (com a google) */
 potExpr returns [int value]
-    :   e=parExpr {$value = $e.value;} ('^' e=parExpr {$value = (int)Math.pow($value,$e.value);})*
+    :   e=parExpr {$value = $e.value;} (POW e=potExpr {$value = (int)Math.pow($value,$e.value);})?
     ;
 
 parExpr returns [int value]
@@ -58,6 +57,7 @@ atom returns [int value]
         }
     ;
 
+POW :   '^' ;
 ID  :   ('a'..'z'|'A'..'Z')+ ;
 INT :   '0'..'9'+ ;
 NEWLINE:'\r'? '\n' ;
