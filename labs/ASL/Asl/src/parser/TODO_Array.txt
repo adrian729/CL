@@ -1,0 +1,20 @@
+lexic
+
+sintax
+
+	- des de funcall es pot fer array acces!!! repassar perque falta a llocs (com assignacio, etc)
+
+	-assignacio "funcall[x] = expr" no es pot fer per ara!!
+
+	- param: ha de ser SEMPRE per referencia amb Arrays, com distingim?
+
+semantica
+
+
+
+
+
+1. gramatica
+2. Data
+3. Stack
+4. Interpr
