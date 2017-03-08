@@ -2,6 +2,12 @@ lexic
 
 sintax
 
+A[exp] = exp // DONE
+X = A[exp] // DONE
+X = func(params)[exp] // DONE
+func(..., A[exp], ...) // DONE
+
+
 	- des de funcall es pot fer array acces!!! repassar perque falta a llocs (com assignacio, etc)
 
 	-assignacio "funcall[x] = expr" no es pot fer per ara!!

@@ -36,27 +36,70 @@ package interp;
  * i.e., the result is stored in the same data.
  * The type VOID is used to represent void values on function returns.
  */
-
+/**
+ * Extended to add arrays.
+ */
 import parser.*;
+
+import java.util.ArrayList;
+
 
 public class Data {
     /** Types of data */
-    public enum Type {VOID, BOOLEAN, INTEGER;}
+    public enum Type {VOID, BOOLEAN, INTEGER, INT_ARRAY, BOOL_ARRAY;}
 
     /** Type of data*/
     private Type type;
 
     /** Value of the data */
-    private int value; 
+    private int value;
+
+    /** values of an array data */
+    private ArrayList<Integer> arrayValues;
 
     /** Constructor for integers */
-    Data(int v) { type = Type.INTEGER; value = v; }
+    Data(int v) { type = Type.INTEGER; value = v; arrayValues = new ArrayList<Integer>(); }
 
     /** Constructor for Booleans */
-    Data(boolean b) { type = Type.BOOLEAN; value = b ? 1 : 0; }
+    Data(boolean b) { type = Type.BOOLEAN; value = b ? 1 : 0; arrayValues = new ArrayList<Integer>(); }
+
+    /** Constructor for Arrays of integers or booleans */
+    Data(ArrayList arr) {
+        if(arr.size() > 0 && arr.get(0) instanceof Boolean) {
+            type = Type.BOOL_ARRAY;
+            arrayValues = new ArrayList<Integer>();
+            for(int i = 0; i < arr.size(); ++i){
+                arrayValues.add((Boolean) arr.get(i) ? 1 : 0);
+            }
+        }
+        else if(arr.get(0) instanceof Integer) {
+            type = Type.INT_ARRAY;
+            arrayValues = new ArrayList<Integer>(arr);
+        }
+    }
+
+    /** Constructor for Arrays of integers, with an initial value */
+    Data(int v, int index) { 
+        type = Type.INT_ARRAY;
+        arrayValues = new ArrayList<Integer>();
+        for(int i = 0; i < index; ++i){
+            arrayValues.add(0);
+        }
+        arrayValues.add(v);
+    }
+
+    /** Constructor for Arrays of booleans, with an initial value */
+    Data(boolean b, int index) { 
+        type = Type.BOOL_ARRAY;
+        arrayValues = new ArrayList<Integer>();
+        for(int i = 0; i < index; ++i){
+            arrayValues.add(0);
+        }
+        arrayValues.add(b ? 1 : 0);
+    }
 
     /** Constructor for void data */
-    Data() {type = Type.VOID; }
+    Data() { type = Type.VOID; }
 
     /** Copy constructor */
     Data(Data d) { type = d.type; value = d.value; }
@@ -69,6 +112,12 @@ public class Data {
 
     /** Indicates whether the data is integer */
     public boolean isInteger() { return type == Type.INTEGER; }
+
+    /** Indicates whether the data is an Array of integers */
+    public boolean isIntArray() { return type == Type.INT_ARRAY; }
+
+    /** Indicates whether the data is an Array of booleans */
+    public boolean isBoolArray() { return type == Type.BOOL_ARRAY; }
 
     /** Indicates whether the data is void */
     public boolean isVoid() { return type == Type.VOID; }
@@ -91,11 +140,51 @@ public class Data {
         return value == 1;
     }
 
+    /**
+     * Gets the value of an integer data at the index i of the array. 
+     * The method asserts that the data is an array of integers.
+     */
+    public int getIntegerValue(int i) {
+        assert type == Type.INT_ARRAY;
+        return arrayValues.get(i);
+    }
+
+    /**
+     * Gets the value of an boolean data at the index i of the array. 
+     * The method asserts that the data is an array of booleans.
+     */
+    public boolean getBooleanValue(int i) {
+        assert type == Type.BOOL_ARRAY;
+        return arrayValues.get(i) == 1;
+    }
+
+    /**
+     * Gets the length of an Array data. The method asserts that
+     * the data is a Boolean.
+     */
+    public int getArrayLength() {
+        assert type == Type.INT_ARRAY || type == Type.BOOL_ARRAY;
+        return arrayValues.size();
+    }
+
     /** Defines a Boolean value for the data */
     public void setValue(boolean b) { type = Type.BOOLEAN; value = b ? 1 : 0; }
 
     /** Defines an integer value for the data */
     public void setValue(int v) { type = Type.INTEGER; value = v; }
+
+    /* TODO: modificar tamany i tipus si fa falta!!!!!!!!!!! */
+    /** Defines an integer at the index i for the data. Modifies array size if needed */
+    public void setValue(int v, int pos) {
+        if(type != Type.INT_ARRAY){
+            type = Type.INT_ARRAY;
+            arrayValues = new ArrayList<Integer>();
+            for(int i = 0; i < pos+1; ++i){
+
+            }
+        }
+         
+    }
 
     /** Copies the value from another data */
     public void setData(Data d) { type = d.type; value = d.value; }
@@ -119,8 +208,7 @@ public class Data {
      * "in place", returning the result on the same data.
      * @param op Type of operator (token).
      * @param d Second operand.
-     */
-     
+     */     
     public void evaluateArithmetic (int op, Data d) {
         assert type == Type.INTEGER && d.type == Type.INTEGER;
         switch (op) {

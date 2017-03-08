@@ -77,10 +77,7 @@ paramlist: param (','! param)*
 // Only one node with the name of the parameter is created
 param   :   '&' id=ID -> ^(PREF[$id,$id.text])
         |   id=ID -> ^(PVALUE[$id,$id.text])
-        //|   '&' ar=array_access -> ^(PREF[$ar,$ar.text])
-        //|   ar=array_access -> ^(PVALUE[$ar,$ar.text])
         ;
-        //TODO PQ PETA AQUI?
 
 // A list of instructions, all of them gouped in a subtree
 block_instructions

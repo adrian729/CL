@@ -7,3 +7,6 @@ Expr.tokens
 ExprInterpParser.java
 ExprInterpLexer.java
 ExprInterp.tokens
+*.dot
+*.trace
+*.tokens
