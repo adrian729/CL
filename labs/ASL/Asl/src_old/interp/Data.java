@@ -36,73 +36,30 @@ package interp;
  * i.e., the result is stored in the same data.
  * The type VOID is used to represent void values on function returns.
  */
-/**
- * Extended to add arrays.
- */
+
 import parser.*;
-
-import java.util.ArrayList;
-
 
 public class Data {
     /** Types of data */
-    public enum Type {VOID, BOOLEAN, INTEGER, INT_ARRAY, BOOL_ARRAY;}
+    public enum Type {VOID, BOOLEAN, INTEGER;}
 
     /** Type of data*/
     private Type type;
 
     /** Value of the data */
-    private int value;
-
-    /** values of an array data */
-    private ArrayList<Integer> arrayValues;
+    private int value; 
 
     /** Constructor for integers */
-    Data(int v) { type = Type.INTEGER; value = v; arrayValues = new ArrayList<Integer>(); }
+    Data(int v) { type = Type.INTEGER; value = v; }
 
     /** Constructor for Booleans */
-    Data(boolean b) { type = Type.BOOLEAN; value = b ? 1 : 0; arrayValues = new ArrayList<Integer>(); }
-
-    /** Constructor for Arrays of integers or booleans */
-    Data(ArrayList arr) {
-        if(arr.size() > 0 && arr.get(0) instanceof Boolean) {
-            type = Type.BOOL_ARRAY;
-            arrayValues = new ArrayList<Integer>();
-            for(int i = 0; i < arr.size(); ++i){
-                arrayValues.add((Boolean) arr.get(i) ? 1 : 0);
-            }
-        }
-        else if(arr.get(0) instanceof Integer) {
-            type = Type.INT_ARRAY;
-            arrayValues = new ArrayList<Integer>(arr);
-        }
-    }
-
-    /** Constructor for Arrays of integers, with an initial value */
-    Data(int v, int index) { 
-        type = Type.INT_ARRAY;
-        arrayValues = new ArrayList<Integer>();
-        for(int i = 0; i < index; ++i){
-            arrayValues.add(0);
-        }
-        arrayValues.add(v);
-    }
-
-    /** Constructor for Arrays of booleans, with an initial value */
-    Data(boolean b, int index) { 
-        type = Type.BOOL_ARRAY;
-        arrayValues = new ArrayList<Integer>();
-        for(int i = 0; i < index; ++i){
-            arrayValues.add(0);
-        }
-        arrayValues.add(b ? 1 : 0);
-    }
+    Data(boolean b) { type = Type.BOOLEAN; value = b ? 1 : 0; }
 
     /** Constructor for void data */
-    Data() { type = Type.VOID; }
+    Data() {type = Type.VOID; }
 
     /** Copy constructor */
-    Data(Data d) { type = d.type; value = d.value; arrayValues = d.arrayValues; }
+    Data(Data d) { type = d.type; value = d.value; }
 
     /** Returns the type of data */
     public Type getType() { return type; }
@@ -112,12 +69,6 @@ public class Data {
 
     /** Indicates whether the data is integer */
     public boolean isInteger() { return type == Type.INTEGER; }
-
-    /** Indicates whether the data is an Array of integers */
-    public boolean isIntArray() { return type == Type.INT_ARRAY; }
-
-    /** Indicates whether the data is an Array of booleans */
-    public boolean isBoolArray() { return type == Type.BOOL_ARRAY; }
 
     /** Indicates whether the data is void */
     public boolean isVoid() { return type == Type.VOID; }
@@ -140,109 +91,18 @@ public class Data {
         return value == 1;
     }
 
-    /**
-     * Gets the value of an integer data at the index i of the array. 
-     * The method asserts that the data is an array of integers.
-     */
-    public int getIntegerValue(int i) {
-        assert type == Type.INT_ARRAY;
-        return arrayValues.get(i);
-    }
-
-    /**
-     * Gets the value of an boolean data at the index i of the array. 
-     * The method asserts that the data is an array of booleans.
-     */
-    public boolean getBooleanValue(int i) {
-        assert type == Type.BOOL_ARRAY;
-        return arrayValues.get(i) == 1;
-    }
-
-    /**
-     * Gets the size of an Array data. The method asserts that
-     * the data is an array.
-     */
-    public int getArraySize() {
-        assert type == Type.INT_ARRAY || type == Type.BOOL_ARRAY;
-        return arrayValues.size();
-    }
-
     /** Defines a Boolean value for the data */
-    public void setValue(boolean b) { type = Type.BOOLEAN; value = b ? 1 : 0; arrayValues = new ArrayList<Integer>(); }
+    public void setValue(boolean b) { type = Type.BOOLEAN; value = b ? 1 : 0; }
 
     /** Defines an integer value for the data */
-    public void setValue(int v) { type = Type.INTEGER; value = v; arrayValues = new ArrayList<Integer>(); }
-
-    /** Defines an integer at the index i for the data. Modifies array size if needed */
-    public void setValue(int v, int index) {
-        if(type != Type.INT_ARRAY){
-            type = Type.INT_ARRAY;
-            arrayValues = new ArrayList<Integer>();
-            for(int i = 0; i < index; ++i){
-                arrayValues.add(0);
-            }
-            arrayValues.add(v);
-        }
-        else {
-            if(arrayValues.size() > index) {
-                arrayValues.set(index, v);
-            }
-            else {
-                for(int i = arrayValues.size(); i < index; ++i){
-                    arrayValues.add(0);
-                }
-                arrayValues.add(v);
-            }
-        }
-    }
-
-    /** Defines an integer at the index i for the data. Modifies array size if needed */
-    public void setValue(boolean b, int index) {
-        if(type != Type.BOOL_ARRAY){
-            type = Type.BOOL_ARRAY;
-            arrayValues = new ArrayList<Integer>();
-            for(int i = 0; i < index; ++i){
-                arrayValues.add(0);
-            }
-            arrayValues.add(b ? 1 : 0);
-        }
-        else {
-            if(arrayValues.size() > index) {
-                arrayValues.set(index, b ? 1 : 0);
-            }
-            else {
-                for(int i = arrayValues.size(); i < index; ++i){
-                    arrayValues.add(0);
-                }
-                arrayValues.add(b ? 1 : 0);
-            }
-        }
-    }
+    public void setValue(int v) { type = Type.INTEGER; value = v; }
 
     /** Copies the value from another data */
-    public void setData(Data d) { type = d.type; value = d.value; arrayValues = d.arrayValues; }
+    public void setData(Data d) { type = d.type; value = d.value; }
     
     /** Returns a string representing the data in textual form. */
     public String toString() {
         if (type == Type.BOOLEAN) return value == 1 ? "true" : "false";
-        else if (type == Type.INT_ARRAY) {
-            String returnStr = "[";
-            for(int i = 0; i < arrayValues.size(); ++i) {
-                if(i != 0) returnStr += ",";
-                returnStr += arrayValues.get(i);
-            }
-            returnStr += "]";
-            return returnStr;
-        }
-        else if (type == Type.BOOL_ARRAY) {
-            String returnStr = "[";
-            for(int i = 0; i < arrayValues.size(); ++i) {
-                if(i != 0) returnStr += ",";                
-                returnStr += arrayValues.get(i) == 1 ? "true" : "false";
-            }
-            returnStr += "]";
-            return returnStr;
-        }
         return Integer.toString(value);
     }
     
@@ -259,7 +119,8 @@ public class Data {
      * "in place", returning the result on the same data.
      * @param op Type of operator (token).
      * @param d Second operand.
-     */     
+     */
+     
     public void evaluateArithmetic (int op, Data d) {
         assert type == Type.INTEGER && d.type == Type.INTEGER;
         switch (op) {

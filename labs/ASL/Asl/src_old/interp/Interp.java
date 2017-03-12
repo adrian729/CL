@@ -144,10 +144,10 @@ public class Interp {
     public int lineNumber() { return linenumber; }
 
     /** Defines the current line number associated to an AST node. */
-    private void setLineNumber(AslTree t) { linenumber = t.getLine(); }
+    private void setLineNumber(AslTree t) { linenumber = t.getLine();}
 
     /** Defines the current line number with a specific value */
-    private void setLineNumber(int l) { linenumber = l; }
+    private void setLineNumber(int l) { linenumber = l;}
     
     /**
      * Executes a function.
@@ -238,16 +238,7 @@ public class Interp {
             // Assignment
             case AslLexer.ASSIGN:
                 value = evaluateExpression(t.getChild(1));
-                if(t.getChild(0).getType() == AslLexer.ARRAY_ACCESS) {
-                    Stack.defineVariableAtIndex (
-                        t.getChild(0).getChild(0).getText(),
-                        t.getChild(0).getChild(1).getIntValue(),
-                        value
-                    );
-                }
-                else {
-                    Stack.defineVariable (t.getChild(0).getText(), value);
-                }
+                Stack.defineVariable (t.getChild(0).getText(), value);
                 return null;
 
             // If-then-else
@@ -280,30 +271,19 @@ public class Interp {
             // in case of a format error.
             case AslLexer.READ:
                 String token = null;
-                Data val = new Data(0);
+                Data val = new Data(0);;
                 try {
                     token = stdin.next();
                     val.setValue(Integer.parseInt(token)); 
                 } catch (NumberFormatException ex) {
                     throw new RuntimeException ("Format error when reading a number: " + token);
                 }
-                // If it is an array, modifies or creates it
-                if(t.getChild(0).getType() == AslLexer.ARRAY_ACCESS) {
-                    Stack.defineVariableAtIndex (
-                        t.getChild(0).getChild(0).getText(),
-                        t.getChild(0).getChild(1).getIntValue(),
-                        val
-                    );
-                }
-                else {
-                    Stack.defineVariable (t.getChild(0).getText(), val);
-                }
+                Stack.defineVariable (t.getChild(0).getText(), val);
                 return null;
 
             // Write statement: it can write an expression or a string.
             case AslLexer.WRITE:
                 AslTree v = t.getChild(0);
-
                 // Special case for strings
                 if (v.getType() == AslLexer.STRING) {
                     System.out.format(v.getStringValue());
@@ -430,27 +410,12 @@ public class Interp {
                 value = evaluateBoolean(type, value, t.getChild(1));
                 break;
 
-            // Array access
-            // We should have the array stored on the "value" variable if everything OK.
-            case AslLexer.ARRAY_ACCESS:
-                value2 = evaluateExpression(t.getChild(1));
-                checkInteger(value2); // this value is an index and must be an Integer 
-                if(value.isIntArray()){
-                    value = new Data(value.getIntegerValue(value2.getIntegerValue())); // var -> value, index -> value2
-                }
-                else if(value.isBoolArray()){
-                    value = new Data(value.getBooleanValue(value2.getIntegerValue())); // var -> value, index -> value2
-                }
-                break;
-
             default: assert false; // Should never happen
         }
         
         setLineNumber(previous_line);
         return value;
     }
-
-    //TODO: falta mirar tot des d'aqui fins a final
     
     /**
      * Evaluation of Boolean expressions. This function implements
@@ -465,8 +430,6 @@ public class Interp {
     private Data evaluateBoolean (int type, Data v, AslTree t) {
         // Boolean evaluation with short-circuit
 
-
-        //TODO afegir arrays!!!!
         switch (type) {
             case AslLexer.AND:
                 // Short circuit if v is false

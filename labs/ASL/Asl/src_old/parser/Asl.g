@@ -44,7 +44,6 @@ tokens {
     BOOLEAN;    // Boolean atom (for Boolean constants "true" or "false")
     PVALUE;     // Parameter by value in the list of parameters
     PREF;       // Parameter by reference in the list of parameters
-    ARRAY_ACCESS;  // Array Access
 }
 
 @header {
@@ -58,15 +57,15 @@ package parser;
 
 
 // A program is a list of functions
-prog    : func+ EOF -> ^(LIST_FUNCTIONS func+)
+prog	: func+ EOF -> ^(LIST_FUNCTIONS func+)
         ;
             
-// A function has a name, a list of parameters and a block of instructions  
-func    : FUNC^ ID params block_instructions ENDFUNC!
+// A function has a name, a list of parameters and a block of instructions	
+func	: FUNC^ ID params block_instructions ENDFUNC!
         ;
 
 // The list of parameters grouped in a subtree (it can be empty)
-params  : '(' paramlist? ')' -> ^(PARAMS paramlist?)
+params	: '(' paramlist? ')' -> ^(PARAMS paramlist?)
         ;
 
 // Parameters are separated by commas
@@ -81,44 +80,44 @@ param   :   '&' id=ID -> ^(PREF[$id,$id.text])
 
 // A list of instructions, all of them gouped in a subtree
 block_instructions
-        :    instruction (';' instruction)* -> ^(LIST_INSTR instruction+)
+        :	 instruction (';' instruction)*
+            -> ^(LIST_INSTR instruction+)
         ;
 
 // The different types of instructions
 instruction
-        :   assign          // Assignment
-        |   ite_stmt        // if-then-else
-        |   while_stmt      // while statement
+        :	assign          // Assignment
+        |	ite_stmt        // if-then-else
+        |	while_stmt      // while statement
         |   funcall         // Call to a procedure (no result produced)
-        |   return_stmt     // Return statement
-        |   read            // Read a variable
-        |   write           // Write a string or an expression
+        |	return_stmt     // Return statement
+        |	read            // Read a variable
+        | 	write           // Write a string or an expression
         |                   // Nothing
         ;
 
 // Assignment
-assign  :   ID eq=EQUAL expr -> ^(ASSIGN[$eq,":="] ID expr)
-        |   array_access eq=EQUAL expr -> ^(ASSIGN[$eq,":="] array_access expr)
+assign	:	ID eq=EQUAL expr -> ^(ASSIGN[$eq,":="] ID expr)
         ;
 
 // if-then-else (else is optional)
-ite_stmt    :   IF^ expr THEN! block_instructions (ELSE! block_instructions)? ENDIF!
+ite_stmt	:	IF^ expr THEN! block_instructions (ELSE! block_instructions)? ENDIF!
             ;
 
 // while statement
-while_stmt  :   WHILE^ expr DO! block_instructions ENDWHILE!
+while_stmt	:	WHILE^ expr DO! block_instructions ENDWHILE!
             ;
 
 // Return statement with an expression
-return_stmt :   RETURN^ expr?
+return_stmt	:	RETURN^ expr?
         ;
 
 // Read a variable
-read    :   READ^ (ID | array_access)
+read	:	READ^ ID
         ;
 
 // Write an expression or a string
-write   :   WRITE^ (expr | STRING )
+write	:   WRITE^ (expr | STRING )
         ;
 
 // Grammar for expressions with boolean, relational and aritmetic operators
@@ -143,23 +142,11 @@ factor  :   (NOT^ | PLUS^ | MINUS^)? atom
 // Atom of the expressions (variables, integer and boolean literals).
 // An atom can also be a function call or another expression
 // in parenthesis
-atom    :   ID ( '.' SIZE  -> ^(SIZE ID)
-                |          -> ID
-                )
-        |   array_access
+atom    :   ID 
         |   INT
         |   (b=TRUE | b=FALSE)  -> ^(BOOLEAN[$b,$b.text])
-        |   funcall (ac='[' expr ']' -> ^(ARRAY_ACCESS[$ac, "[]"] funcall expr)
-                    | '.' SIZE       -> ^(SIZE funcall)
-                    |                -> funcall
-                    )
+        |   funcall
         |   '('! expr ')'!
-        ;
-
-
-
-array_access  
-        :   ID ac='[' expr ']' -> ^(ARRAY_ACCESS[$ac,"ARRAY_ACCESS"] ID expr)
         ;
 
 // A function call has a lits of arguments in parenthesis (possibly empty)
@@ -171,42 +158,41 @@ expr_list:  expr (','! expr)*
         ;
 
 // Basic tokens
-EQUAL   : '=' ;
+EQUAL	: '=' ;
 NOT_EQUAL: '!=' ;
-LT      : '<' ;
-LE      : '<=';
-GT      : '>';
-GE      : '>=';
-PLUS    : '+' ;
-MINUS   : '-' ;
-MUL     : '*';
-DIV     : '/';
-MOD     : '%' ;
-NOT     : 'not';
-AND     : 'and' ;
-OR      : 'or' ;    
-IF      : 'if' ;
-THEN    : 'then' ;
-ELSE    : 'else' ;
-ENDIF   : 'endif' ;
-WHILE   : 'while' ;
-DO      : 'do' ;
+LT	    : '<' ;
+LE	    : '<=';
+GT	    : '>';
+GE	    : '>=';
+PLUS	: '+' ;
+MINUS	: '-' ;
+MUL	    : '*';
+DIV	    : '/';
+MOD	    : '%' ;
+NOT	    : 'not';
+AND	    : 'and' ;
+OR	    : 'or' ;	
+IF  	: 'if' ;
+THEN	: 'then' ;
+ELSE	: 'else' ;
+ENDIF	: 'endif' ;
+WHILE	: 'while' ;
+DO	    : 'do' ;
 ENDWHILE: 'endwhile' ;
-FUNC    : 'func' ;
-ENDFUNC : 'endfunc' ;
-RETURN  : 'return' ;
-READ    : 'read' ;
-WRITE   : 'write' ;
-SIZE    : 'size' ;
+FUNC	: 'func' ;
+ENDFUNC	: 'endfunc' ;
+RETURN	: 'return' ;
+READ	: 'read' ;
+WRITE	: 'write' ;
 TRUE    : 'true' ;
 FALSE   : 'false';
-ID      :   ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
-INT     :   '0'..'9'+ ;
+ID  	:	('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
+INT 	:	'0'..'9'+ ;
 
 // C-style comments
-COMMENT : '//' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}
-        | '/*' ( options {greedy=false;} : . )* '*/' {$channel=HIDDEN;}
-        ;
+COMMENT	: '//' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}
+    	| '/*' ( options {greedy=false;} : . )* '*/' {$channel=HIDDEN;}
+    	;
 
 // Strings (in quotes) with escape sequences        
 STRING  :  '"' ( ESC_SEQ | ~('\\'|'"') )* '"'
@@ -218,10 +204,11 @@ ESC_SEQ
     ;
 
 // White spaces
-WS      : ( ' '
+WS  	: ( ' '
         | '\t'
         | '\r'
         | '\n'
         ) {$channel=HIDDEN;}
-        ;
+    	;
+
 

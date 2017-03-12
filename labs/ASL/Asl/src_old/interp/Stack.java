@@ -93,43 +93,7 @@ public class Stack {
     public void defineVariable(String name, Data value) {
         Data d = CurrentAR.get(name);
         if (d == null) CurrentAR.put(name, value); // New definition
-        else d.setData(value); // Use the previous data
-    }
-
-    /** Defines the value of an array variable. If the array variable does not
-     * exist, it is created. If it exists, the size, value and type of
-     * the variable are re-defined if necessary and the value set to its 
-     * index position.
-     * @param name The name of the variable
-     * @param index The index of the array that stores the value
-     * @param value The value of the variable
-     */
-    public void defineVariableAtIndex(String name, int index, Data value) {
-        Data d = CurrentAR.get(name);
-        Data nv;
-        if (d == null){
-            if(value.isInteger()){
-                nv = new Data(value.getIntegerValue(), index);
-            }
-            else if(value.isBoolean()){
-                nv = new Data(value.getBooleanValue(), index);
-            }
-            else {
-                throw new RuntimeException ("Incompatible types");
-            }
-            CurrentAR.put(name, nv); // New definition
-        }
-        else{
-            if(value.isInteger()){
-                d.setValue(value.getIntegerValue(), index);
-            }
-            else if(value.isBoolean()){
-                d.setValue(value.getBooleanValue(), index);
-            }
-            else {
-                throw new RuntimeException ("Incompatible types");
-            }
-        }
+        else d.setData(value); // Use the previous data 
     }
 
     /** Gets the value of the variable. The value is represented as

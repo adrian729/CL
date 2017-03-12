@@ -17,6 +17,10 @@ func(..., A[exp], ...) // DONE
 semantica
 
 
+Interpr
+
+	- Compte pas per valor d'arrays! s'han d'agafar per referencia!
+
 
 
 
