@@ -45,6 +45,7 @@ tokens {
     PVALUE;     // Parameter by value in the list of parameters
     PREF;       // Parameter by reference in the list of parameters
     ARRAY_ACCESS;  // Array Access
+    SIZECALL;       // size call
 }
 
 @header {
@@ -143,14 +144,14 @@ factor  :   (NOT^ | PLUS^ | MINUS^)? atom
 // Atom of the expressions (variables, integer and boolean literals).
 // An atom can also be a function call or another expression
 // in parenthesis
-atom    :   ID ( '.' SIZE  -> ^(SIZE ID)
+atom    :   ID ( '.' s=SIZE  -> ^(SIZECALL[$s, "SIZE"] ID)
                 |          -> ID
                 )
         |   array_access
         |   INT
         |   (b=TRUE | b=FALSE)  -> ^(BOOLEAN[$b,$b.text])
-        |   funcall (ac='[' expr ']' -> ^(ARRAY_ACCESS[$ac, "[]"] funcall expr)
-                    | '.' SIZE       -> ^(SIZE funcall)
+        |   funcall (ac='[' expr ']' -> ^(ARRAY_ACCESS[$ac, "ARRAY_ACCESS"] funcall expr)
+                    | '.' s=SIZE       -> ^(SIZECALL[$s, "SIZE"] funcall)
                     |                -> funcall
                     )
         |   '('! expr ')'!

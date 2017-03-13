@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g 2017-03-12 22:19:46
+// $ANTLR 3.4 /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g 2017-03-13 16:45:50
 
 package parser;
 
@@ -11,7 +11,6 @@ import java.util.ArrayList;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class AslLexer extends Lexer {
     public static final int EOF=-1;
-    public static final int T__49=49;
     public static final int T__50=50;
     public static final int T__51=51;
     public static final int T__52=52;
@@ -19,6 +18,7 @@ public class AslLexer extends Lexer {
     public static final int T__54=54;
     public static final int T__55=55;
     public static final int T__56=56;
+    public static final int T__57=57;
     public static final int AND=4;
     public static final int ARGLIST=5;
     public static final int ARRAY_ACCESS=6;
@@ -58,12 +58,13 @@ public class AslLexer extends Lexer {
     public static final int READ=40;
     public static final int RETURN=41;
     public static final int SIZE=42;
-    public static final int STRING=43;
-    public static final int THEN=44;
-    public static final int TRUE=45;
-    public static final int WHILE=46;
-    public static final int WRITE=47;
-    public static final int WS=48;
+    public static final int SIZECALL=43;
+    public static final int STRING=44;
+    public static final int THEN=45;
+    public static final int TRUE=46;
+    public static final int WHILE=47;
+    public static final int WRITE=48;
+    public static final int WS=49;
 
     // delegates
     // delegators
@@ -80,36 +81,15 @@ public class AslLexer extends Lexer {
     }
     public String getGrammarFileName() { return "/home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g"; }
 
-    // $ANTLR start "T__49"
-    public final void mT__49() throws RecognitionException {
-        try {
-            int _type = T__49;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:6:7: ( '&' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:6:9: '&'
-            {
-            match('&'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        	// do for sure before leaving
-        }
-    }
-    // $ANTLR end "T__49"
-
     // $ANTLR start "T__50"
     public final void mT__50() throws RecognitionException {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:7:7: ( '(' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:7:9: '('
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:6:7: ( '&' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:6:9: '&'
             {
-            match('('); 
+            match('&'); 
 
             }
 
@@ -127,10 +107,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:8:7: ( ')' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:8:9: ')'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:7:7: ( '(' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:7:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -148,10 +128,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:9:7: ( ',' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:9:9: ','
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:8:7: ( ')' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:8:9: ')'
             {
-            match(','); 
+            match(')'); 
 
             }
 
@@ -169,10 +149,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:10:7: ( '.' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:10:9: '.'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:9:7: ( ',' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:9:9: ','
             {
-            match('.'); 
+            match(','); 
 
             }
 
@@ -190,10 +170,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:11:7: ( ';' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:11:9: ';'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:10:7: ( '.' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:10:9: '.'
             {
-            match(';'); 
+            match('.'); 
 
             }
 
@@ -211,10 +191,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:12:7: ( '[' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:12:9: '['
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:11:7: ( ';' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:11:9: ';'
             {
-            match('['); 
+            match(';'); 
 
             }
 
@@ -232,6 +212,27 @@ public class AslLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:12:7: ( '[' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:12:9: '['
+            {
+            match('['); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__56"
+
+    // $ANTLR start "T__57"
+    public final void mT__57() throws RecognitionException {
+        try {
+            int _type = T__57;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
             // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:13:7: ( ']' )
             // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:13:9: ']'
             {
@@ -246,15 +247,15 @@ public class AslLexer extends Lexer {
         	// do for sure before leaving
         }
     }
-    // $ANTLR end "T__56"
+    // $ANTLR end "T__57"
 
     // $ANTLR start "EQUAL"
     public final void mEQUAL() throws RecognitionException {
         try {
             int _type = EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:174:9: ( '=' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:174:11: '='
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:175:9: ( '=' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:175:11: '='
             {
             match('='); 
 
@@ -274,8 +275,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = NOT_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:175:10: ( '!=' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:175:12: '!='
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:176:10: ( '!=' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:176:12: '!='
             {
             match("!="); 
 
@@ -297,8 +298,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = LT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:176:9: ( '<' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:176:11: '<'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:177:9: ( '<' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:177:11: '<'
             {
             match('<'); 
 
@@ -318,8 +319,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = LE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:177:9: ( '<=' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:177:11: '<='
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:178:9: ( '<=' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:178:11: '<='
             {
             match("<="); 
 
@@ -341,8 +342,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = GT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:178:9: ( '>' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:178:11: '>'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:179:9: ( '>' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:179:11: '>'
             {
             match('>'); 
 
@@ -362,8 +363,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = GE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:179:9: ( '>=' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:179:11: '>='
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:180:9: ( '>=' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:180:11: '>='
             {
             match(">="); 
 
@@ -385,8 +386,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:180:9: ( '+' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:180:11: '+'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:181:9: ( '+' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:181:11: '+'
             {
             match('+'); 
 
@@ -406,8 +407,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:181:9: ( '-' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:181:11: '-'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:182:9: ( '-' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:182:11: '-'
             {
             match('-'); 
 
@@ -427,8 +428,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = MUL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:182:9: ( '*' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:182:11: '*'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:183:9: ( '*' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:183:11: '*'
             {
             match('*'); 
 
@@ -448,8 +449,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = DIV;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:183:9: ( '/' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:183:11: '/'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:184:9: ( '/' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:184:11: '/'
             {
             match('/'); 
 
@@ -469,8 +470,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = MOD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:184:9: ( '%' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:184:11: '%'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:185:9: ( '%' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:185:11: '%'
             {
             match('%'); 
 
@@ -490,8 +491,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = NOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:185:9: ( 'not' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:185:11: 'not'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:186:9: ( 'not' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:186:11: 'not'
             {
             match("not"); 
 
@@ -513,8 +514,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:186:9: ( 'and' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:186:11: 'and'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:187:9: ( 'and' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:187:11: 'and'
             {
             match("and"); 
 
@@ -536,8 +537,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:187:9: ( 'or' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:187:11: 'or'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:188:9: ( 'or' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:188:11: 'or'
             {
             match("or"); 
 
@@ -559,8 +560,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = IF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:188:9: ( 'if' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:188:11: 'if'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:189:9: ( 'if' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:189:11: 'if'
             {
             match("if"); 
 
@@ -582,8 +583,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = THEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:189:9: ( 'then' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:189:11: 'then'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:190:9: ( 'then' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:190:11: 'then'
             {
             match("then"); 
 
@@ -605,8 +606,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ELSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:190:9: ( 'else' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:190:11: 'else'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:191:9: ( 'else' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:191:11: 'else'
             {
             match("else"); 
 
@@ -628,8 +629,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ENDIF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:191:9: ( 'endif' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:191:11: 'endif'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:192:9: ( 'endif' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:192:11: 'endif'
             {
             match("endif"); 
 
@@ -651,8 +652,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = WHILE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:192:9: ( 'while' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:192:11: 'while'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:193:9: ( 'while' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:193:11: 'while'
             {
             match("while"); 
 
@@ -674,8 +675,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = DO;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:193:9: ( 'do' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:193:11: 'do'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:194:9: ( 'do' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:194:11: 'do'
             {
             match("do"); 
 
@@ -697,8 +698,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ENDWHILE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:194:9: ( 'endwhile' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:194:11: 'endwhile'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:195:9: ( 'endwhile' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:195:11: 'endwhile'
             {
             match("endwhile"); 
 
@@ -720,8 +721,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = FUNC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:195:9: ( 'func' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:195:11: 'func'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:196:9: ( 'func' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:196:11: 'func'
             {
             match("func"); 
 
@@ -743,8 +744,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ENDFUNC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:196:9: ( 'endfunc' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:196:11: 'endfunc'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:197:9: ( 'endfunc' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:197:11: 'endfunc'
             {
             match("endfunc"); 
 
@@ -766,8 +767,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = RETURN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:197:9: ( 'return' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:197:11: 'return'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:198:9: ( 'return' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:198:11: 'return'
             {
             match("return"); 
 
@@ -789,8 +790,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = READ;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:198:9: ( 'read' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:198:11: 'read'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:199:9: ( 'read' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:199:11: 'read'
             {
             match("read"); 
 
@@ -812,8 +813,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = WRITE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:199:9: ( 'write' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:199:11: 'write'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:200:9: ( 'write' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:200:11: 'write'
             {
             match("write"); 
 
@@ -835,8 +836,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = SIZE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:200:9: ( 'size' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:200:11: 'size'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:201:9: ( 'size' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:201:11: 'size'
             {
             match("size"); 
 
@@ -858,8 +859,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = TRUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:201:9: ( 'true' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:201:11: 'true'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:202:9: ( 'true' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:202:11: 'true'
             {
             match("true"); 
 
@@ -881,8 +882,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = FALSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:202:9: ( 'false' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:202:11: 'false'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:203:9: ( 'false' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:203:11: 'false'
             {
             match("false"); 
 
@@ -904,8 +905,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:203:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:203:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:204:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:204:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
             {
             if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
                 input.consume();
@@ -917,7 +918,7 @@ public class AslLexer extends Lexer {
             }
 
 
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:203:37: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:204:37: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
             loop1:
             do {
                 int alt1=2;
@@ -967,10 +968,10 @@ public class AslLexer extends Lexer {
         try {
             int _type = INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:204:9: ( ( '0' .. '9' )+ )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:204:13: ( '0' .. '9' )+
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:205:9: ( ( '0' .. '9' )+ )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:205:13: ( '0' .. '9' )+
             {
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:204:13: ( '0' .. '9' )+
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:205:13: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -1025,7 +1026,7 @@ public class AslLexer extends Lexer {
         try {
             int _type = COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:207:9: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:208:9: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1055,13 +1056,13 @@ public class AslLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:207:11: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:208:11: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
                     {
                     match("//"); 
 
 
 
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:207:16: (~ ( '\\n' | '\\r' ) )*
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:208:16: (~ ( '\\n' | '\\r' ) )*
                     loop3:
                     do {
                         int alt3=2;
@@ -1095,7 +1096,7 @@ public class AslLexer extends Lexer {
                     } while (true);
 
 
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:207:30: ( '\\r' )?
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:208:30: ( '\\r' )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -1104,7 +1105,7 @@ public class AslLexer extends Lexer {
                     }
                     switch (alt4) {
                         case 1 :
-                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:207:30: '\\r'
+                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:208:30: '\\r'
                             {
                             match('\r'); 
 
@@ -1121,13 +1122,13 @@ public class AslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:208:11: '/*' ( options {greedy=false; } : . )* '*/'
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:209:11: '/*' ( options {greedy=false; } : . )* '*/'
                     {
                     match("/*"); 
 
 
 
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:208:16: ( options {greedy=false; } : . )*
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:209:16: ( options {greedy=false; } : . )*
                     loop5:
                     do {
                         int alt5=2;
@@ -1152,7 +1153,7 @@ public class AslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:208:44: .
+                    	    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:209:44: .
                     	    {
                     	    matchAny(); 
 
@@ -1189,12 +1190,12 @@ public class AslLexer extends Lexer {
         try {
             int _type = STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:212:9: ( '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"' )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:212:12: '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:213:9: ( '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:213:12: '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"'
             {
             match('\"'); 
 
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:212:16: ( ESC_SEQ |~ ( '\\\\' | '\"' ) )*
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:213:16: ( ESC_SEQ |~ ( '\\\\' | '\"' ) )*
             loop7:
             do {
                 int alt7=3;
@@ -1210,7 +1211,7 @@ public class AslLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:212:18: ESC_SEQ
+            	    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:213:18: ESC_SEQ
             	    {
             	    mESC_SEQ(); 
 
@@ -1218,7 +1219,7 @@ public class AslLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:212:28: ~ ( '\\\\' | '\"' )
+            	    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:213:28: ~ ( '\\\\' | '\"' )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -1255,8 +1256,8 @@ public class AslLexer extends Lexer {
     // $ANTLR start "ESC_SEQ"
     public final void mESC_SEQ() throws RecognitionException {
         try {
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:218:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:218:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:219:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:219:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
             {
             match('\\'); 
 
@@ -1285,8 +1286,8 @@ public class AslLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:221:9: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:221:11: ( ' ' | '\\t' | '\\r' | '\\n' )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:222:9: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:222:11: ( ' ' | '\\t' | '\\r' | '\\n' )
             {
             if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
                 input.consume();
@@ -1312,70 +1313,70 @@ public class AslLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:8: ( T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | EQUAL | NOT_EQUAL | LT | LE | GT | GE | PLUS | MINUS | MUL | DIV | MOD | NOT | AND | OR | IF | THEN | ELSE | ENDIF | WHILE | DO | ENDWHILE | FUNC | ENDFUNC | RETURN | READ | WRITE | SIZE | TRUE | FALSE | ID | INT | COMMENT | STRING | WS )
+        // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:8: ( T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | EQUAL | NOT_EQUAL | LT | LE | GT | GE | PLUS | MINUS | MUL | DIV | MOD | NOT | AND | OR | IF | THEN | ELSE | ENDIF | WHILE | DO | ENDWHILE | FUNC | ENDFUNC | RETURN | READ | WRITE | SIZE | TRUE | FALSE | ID | INT | COMMENT | STRING | WS )
         int alt8=42;
         alt8 = dfa8.predict(input);
         switch (alt8) {
             case 1 :
-                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:10: T__49
-                {
-                mT__49(); 
-
-
-                }
-                break;
-            case 2 :
-                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:16: T__50
+                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:10: T__50
                 {
                 mT__50(); 
 
 
                 }
                 break;
-            case 3 :
-                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:22: T__51
+            case 2 :
+                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:16: T__51
                 {
                 mT__51(); 
 
 
                 }
                 break;
-            case 4 :
-                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:28: T__52
+            case 3 :
+                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:22: T__52
                 {
                 mT__52(); 
 
 
                 }
                 break;
-            case 5 :
-                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:34: T__53
+            case 4 :
+                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:28: T__53
                 {
                 mT__53(); 
 
 
                 }
                 break;
-            case 6 :
-                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:40: T__54
+            case 5 :
+                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:34: T__54
                 {
                 mT__54(); 
 
 
                 }
                 break;
-            case 7 :
-                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:46: T__55
+            case 6 :
+                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:40: T__55
                 {
                 mT__55(); 
 
 
                 }
                 break;
-            case 8 :
-                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:52: T__56
+            case 7 :
+                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:46: T__56
                 {
                 mT__56(); 
+
+
+                }
+                break;
+            case 8 :
+                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:1:52: T__57
+                {
+                mT__57(); 
 
 
                 }
@@ -1839,7 +1840,7 @@ public class AslLexer extends Lexer {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | EQUAL | NOT_EQUAL | LT | LE | GT | GE | PLUS | MINUS | MUL | DIV | MOD | NOT | AND | OR | IF | THEN | ELSE | ENDIF | WHILE | DO | ENDWHILE | FUNC | ENDFUNC | RETURN | READ | WRITE | SIZE | TRUE | FALSE | ID | INT | COMMENT | STRING | WS );";
+            return "1:1: Tokens : ( T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | EQUAL | NOT_EQUAL | LT | LE | GT | GE | PLUS | MINUS | MUL | DIV | MOD | NOT | AND | OR | IF | THEN | ELSE | ENDIF | WHILE | DO | ENDWHILE | FUNC | ENDFUNC | RETURN | READ | WRITE | SIZE | TRUE | FALSE | ID | INT | COMMENT | STRING | WS );";
         }
     }
  

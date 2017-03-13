@@ -119,6 +119,9 @@ public class Data {
     /** Indicates whether the data is an Array of booleans */
     public boolean isBoolArray() { return type == Type.BOOL_ARRAY; }
 
+    /** Indicates whether the data is an Array */
+    public boolean isArray() { return type == Type.BOOL_ARRAY || type == Type.INT_ARRAY; }
+
     /** Indicates whether the data is void */
     public boolean isVoid() { return type == Type.VOID; }
 

@@ -235,13 +235,15 @@ public class Interp {
         // A big switch for all type of instructions
         switch (t.getType()) {
 
+            // TODO: ADD ARRAYS
+
             // Assignment
             case AslLexer.ASSIGN:
                 value = evaluateExpression(t.getChild(1));
                 if(t.getChild(0).getType() == AslLexer.ARRAY_ACCESS) {
                     Stack.defineVariableAtIndex (
                         t.getChild(0).getChild(0).getText(),
-                        t.getChild(0).getChild(1).getIntValue(),
+                        evaluateExpression(t.getChild(0).getChild(1)).getIntegerValue(),
                         value
                     );
                 }
@@ -262,9 +264,9 @@ public class Interp {
             // While
             case AslLexer.WHILE:
                 while (true) {
-                    value = evaluateExpression(t.getChild(0));
+                    value = evaluateExpression(t.getChild(0)); // Condition
                     checkBoolean(value);
-                    if (!value.getBooleanValue()) return null;
+                    if (!value.getBooleanValue()) return null; // Condition not met
                     Data r = executeListInstructions(t.getChild(1));
                     if (r != null) return r;
                 }
@@ -343,6 +345,10 @@ public class Interp {
         Data value = null;
         // Atoms
         switch (type) {
+            // A size call on an array variable
+            case AslLexer.SIZECALL:
+                value = new Data(evaluateExpression(t.getChild(0)).getArraySize());
+                break;
             // A variable
             case AslLexer.ID:
                 value = new Data(Stack.getVariable(t.getText()));
@@ -434,7 +440,7 @@ public class Interp {
             // We should have the array stored on the "value" variable if everything OK.
             case AslLexer.ARRAY_ACCESS:
                 value2 = evaluateExpression(t.getChild(1));
-                checkInteger(value2); // this value is an index and must be an Integer 
+                checkInteger(value2); // this value is an index and must be an Integer
                 if(value.isIntArray()){
                     value = new Data(value.getIntegerValue(value2.getIntegerValue())); // var -> value, index -> value2
                 }
@@ -449,8 +455,6 @@ public class Interp {
         setLineNumber(previous_line);
         return value;
     }
-
-    //TODO: falta mirar tot des d'aqui fins a final
     
     /**
      * Evaluation of Boolean expressions. This function implements
@@ -464,9 +468,6 @@ public class Interp {
      */
     private Data evaluateBoolean (int type, Data v, AslTree t) {
         // Boolean evaluation with short-circuit
-
-
-        //TODO afegir arrays!!!!
         switch (type) {
             case AslLexer.AND:
                 // Short circuit if v is false
@@ -533,16 +534,26 @@ public class Interp {
             AslTree p = pars.getChild(i); // Parameters of the callee
             AslTree a = args.getChild(i); // Arguments passed by the caller
             setLineNumber(a);
+            Data v = new Data(); // param value
             if (p.getType() == AslLexer.PVALUE) {
-                // Pass by value: evaluate the expression
-                Params.add(i,evaluateExpression(a));
+                // Pass by value:
+                // check that it is a variable and if it is an Array
+                // (if it is an array, we need to pass it by reference)
+                if (a.getType() == AslLexer.ID && Stack.getVariable(a.getText()).isArray()){
+                    v = Stack.getVariable(a.getText());
+                }
+                else {
+                    // evaluate the expression if it is not an array
+                    v = evaluateExpression(a);
+                }                
+                Params.add(i,v);
             } else {
                 // Pass by reference: check that it is a variable
                 if (a.getType() != AslLexer.ID) {
                     throw new RuntimeException("Wrong argument for pass by reference");
                 }
                 // Find the variable and pass the reference
-                Data v = Stack.getVariable(a.getText());
+                v = Stack.getVariable(a.getText());
                 Params.add(i,v);
             }
         }
