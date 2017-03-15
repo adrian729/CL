@@ -144,10 +144,10 @@ public class Interp {
     public int lineNumber() { return linenumber; }
 
     /** Defines the current line number associated to an AST node. */
-    private void setLineNumber(AslTree t) { linenumber = t.getLine(); }
+    private void setLineNumber(AslTree t) { linenumber = t.getLine();}
 
     /** Defines the current line number with a specific value */
-    private void setLineNumber(int l) { linenumber = l; }
+    private void setLineNumber(int l) { linenumber = l;}
     
     /**
      * Executes a function.
@@ -235,21 +235,10 @@ public class Interp {
         // A big switch for all type of instructions
         switch (t.getType()) {
 
-            // TODO: ADD ARRAYS
-
             // Assignment
             case AslLexer.ASSIGN:
                 value = evaluateExpression(t.getChild(1));
-                if(t.getChild(0).getType() == AslLexer.ARRAY_ACCESS) {
-                    Stack.defineVariableAtIndex (
-                        t.getChild(0).getChild(0).getText(),
-                        evaluateExpression(t.getChild(0).getChild(1)).getIntegerValue(),
-                        value
-                    );
-                }
-                else {
-                    Stack.defineVariable (t.getChild(0).getText(), value);
-                }
+                Stack.defineVariable (t.getChild(0).getText(), value);
                 return null;
 
             // If-then-else
@@ -264,9 +253,9 @@ public class Interp {
             // While
             case AslLexer.WHILE:
                 while (true) {
-                    value = evaluateExpression(t.getChild(0)); // Condition
+                    value = evaluateExpression(t.getChild(0));
                     checkBoolean(value);
-                    if (!value.getBooleanValue()) return null; // Condition not met
+                    if (!value.getBooleanValue()) return null;
                     Data r = executeListInstructions(t.getChild(1));
                     if (r != null) return r;
                 }
@@ -282,30 +271,19 @@ public class Interp {
             // in case of a format error.
             case AslLexer.READ:
                 String token = null;
-                Data val = new Data(0);
+                Data val = new Data(0);;
                 try {
                     token = stdin.next();
                     val.setValue(Integer.parseInt(token)); 
                 } catch (NumberFormatException ex) {
                     throw new RuntimeException ("Format error when reading a number: " + token);
                 }
-                // If it is an array, modifies or creates it
-                if(t.getChild(0).getType() == AslLexer.ARRAY_ACCESS) {
-                    Stack.defineVariableAtIndex (
-                        t.getChild(0).getChild(0).getText(),
-                        t.getChild(0).getChild(1).getIntValue(),
-                        val
-                    );
-                }
-                else {
-                    Stack.defineVariable (t.getChild(0).getText(), val);
-                }
+                Stack.defineVariable (t.getChild(0).getText(), val);
                 return null;
 
             // Write statement: it can write an expression or a string.
             case AslLexer.WRITE:
                 AslTree v = t.getChild(0);
-
                 // Special case for strings
                 if (v.getType() == AslLexer.STRING) {
                     System.out.format(v.getStringValue());
@@ -345,10 +323,6 @@ public class Interp {
         Data value = null;
         // Atoms
         switch (type) {
-            // A size call on an array variable
-            case AslLexer.SIZECALL:
-                value = new Data(evaluateExpression(t.getChild(0)).getArraySize());
-                break;
             // A variable
             case AslLexer.ID:
                 value = new Data(Stack.getVariable(t.getText()));
@@ -393,14 +367,6 @@ public class Interp {
                     checkBoolean(value);
                     value.setValue(!value.getBooleanValue());
                     break;
-                case AslLexer.FACT:
-                    checkInteger(value);
-                    int f_res = 1;
-                    for(int i = 2; i <= value.getIntegerValue(); i++){
-                        f_res *= i;
-                    }
-                    value.setValue(f_res);
-                    break;
                 default: assert false; // Should never happen
             }
             setLineNumber(previous_line);
@@ -444,19 +410,6 @@ public class Interp {
                 value = evaluateBoolean(type, value, t.getChild(1));
                 break;
 
-            // Array access
-            // We should have the array stored on the "value" variable if everything OK.
-            case AslLexer.ARRAY_ACCESS:
-                value2 = evaluateExpression(t.getChild(1));
-                checkInteger(value2); // this value is an index and must be an Integer
-                if(value.isIntArray()){
-                    value = new Data(value.getIntegerValue(value2.getIntegerValue())); // var -> value, index -> value2
-                }
-                else if(value.isBoolArray()){
-                    value = new Data(value.getBooleanValue(value2.getIntegerValue())); // var -> value, index -> value2
-                }
-                break;
-
             default: assert false; // Should never happen
         }
         
@@ -476,6 +429,7 @@ public class Interp {
      */
     private Data evaluateBoolean (int type, Data v, AslTree t) {
         // Boolean evaluation with short-circuit
+
         switch (type) {
             case AslLexer.AND:
                 // Short circuit if v is false
@@ -542,26 +496,16 @@ public class Interp {
             AslTree p = pars.getChild(i); // Parameters of the callee
             AslTree a = args.getChild(i); // Arguments passed by the caller
             setLineNumber(a);
-            Data v = new Data(); // param value
             if (p.getType() == AslLexer.PVALUE) {
-                // Pass by value:
-                // check that it is a variable and if it is an Array
-                // (if it is an array, we need to pass it by reference)
-                if (a.getType() == AslLexer.ID && Stack.getVariable(a.getText()).isArray()){
-                    v = Stack.getVariable(a.getText());
-                }
-                else {
-                    // evaluate the expression if it is not an array
-                    v = evaluateExpression(a);
-                }                
-                Params.add(i,v);
+                // Pass by value: evaluate the expression
+                Params.add(i,evaluateExpression(a));
             } else {
                 // Pass by reference: check that it is a variable
                 if (a.getType() != AslLexer.ID) {
                     throw new RuntimeException("Wrong argument for pass by reference");
                 }
                 // Find the variable and pass the reference
-                v = Stack.getVariable(a.getText());
+                Data v = Stack.getVariable(a.getText());
                 Params.add(i,v);
             }
         }

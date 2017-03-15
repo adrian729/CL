@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g 2017-03-15 23:58:04
+// $ANTLR 3.4 /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g 2017-03-13 16:45:50
 
 package parser;
 import interp.AslTree;
@@ -41,19 +41,18 @@ import org.antlr.runtime.tree.*;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class AslParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "AND", "ARGLIST", "ARRAY_ACCESS", "ASSIGN", "BOOLEAN", "COMMENT", "DIV", "DO", "ELSE", "ENDFUNC", "ENDIF", "ENDWHILE", "EQUAL", "ESC_SEQ", "FACT", "FALSE", "FUNC", "FUNCALL", "GE", "GT", "ID", "IF", "INT", "LE", "LIST_FUNCTIONS", "LIST_INSTR", "LT", "MINUS", "MOD", "MUL", "NOT", "NOT_EQUAL", "OR", "PARAMS", "PLUS", "PREF", "PVALUE", "READ", "RETURN", "SIZE", "SIZECALL", "STRING", "SUM", "THEN", "TRUE", "WHILE", "WRITE", "WS", "'&'", "'('", "'()'", "')'", "','", "'.'", "';'", "'['", "']'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "AND", "ARGLIST", "ARRAY_ACCESS", "ASSIGN", "BOOLEAN", "COMMENT", "DIV", "DO", "ELSE", "ENDFUNC", "ENDIF", "ENDWHILE", "EQUAL", "ESC_SEQ", "FALSE", "FUNC", "FUNCALL", "GE", "GT", "ID", "IF", "INT", "LE", "LIST_FUNCTIONS", "LIST_INSTR", "LT", "MINUS", "MOD", "MUL", "NOT", "NOT_EQUAL", "OR", "PARAMS", "PLUS", "PREF", "PVALUE", "READ", "RETURN", "SIZE", "SIZECALL", "STRING", "THEN", "TRUE", "WHILE", "WRITE", "WS", "'&'", "'('", "')'", "','", "'.'", "';'", "'['", "']'"
     };
 
     public static final int EOF=-1;
+    public static final int T__50=50;
+    public static final int T__51=51;
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__57=57;
-    public static final int T__58=58;
-    public static final int T__59=59;
-    public static final int T__60=60;
     public static final int AND=4;
     public static final int ARGLIST=5;
     public static final int ARRAY_ACCESS=6;
@@ -68,40 +67,38 @@ public class AslParser extends Parser {
     public static final int ENDWHILE=15;
     public static final int EQUAL=16;
     public static final int ESC_SEQ=17;
-    public static final int FACT=18;
-    public static final int FALSE=19;
-    public static final int FUNC=20;
-    public static final int FUNCALL=21;
-    public static final int GE=22;
-    public static final int GT=23;
-    public static final int ID=24;
-    public static final int IF=25;
-    public static final int INT=26;
-    public static final int LE=27;
-    public static final int LIST_FUNCTIONS=28;
-    public static final int LIST_INSTR=29;
-    public static final int LT=30;
-    public static final int MINUS=31;
-    public static final int MOD=32;
-    public static final int MUL=33;
-    public static final int NOT=34;
-    public static final int NOT_EQUAL=35;
-    public static final int OR=36;
-    public static final int PARAMS=37;
-    public static final int PLUS=38;
-    public static final int PREF=39;
-    public static final int PVALUE=40;
-    public static final int READ=41;
-    public static final int RETURN=42;
-    public static final int SIZE=43;
-    public static final int SIZECALL=44;
-    public static final int STRING=45;
-    public static final int SUM=46;
-    public static final int THEN=47;
-    public static final int TRUE=48;
-    public static final int WHILE=49;
-    public static final int WRITE=50;
-    public static final int WS=51;
+    public static final int FALSE=18;
+    public static final int FUNC=19;
+    public static final int FUNCALL=20;
+    public static final int GE=21;
+    public static final int GT=22;
+    public static final int ID=23;
+    public static final int IF=24;
+    public static final int INT=25;
+    public static final int LE=26;
+    public static final int LIST_FUNCTIONS=27;
+    public static final int LIST_INSTR=28;
+    public static final int LT=29;
+    public static final int MINUS=30;
+    public static final int MOD=31;
+    public static final int MUL=32;
+    public static final int NOT=33;
+    public static final int NOT_EQUAL=34;
+    public static final int OR=35;
+    public static final int PARAMS=36;
+    public static final int PLUS=37;
+    public static final int PREF=38;
+    public static final int PVALUE=39;
+    public static final int READ=40;
+    public static final int RETURN=41;
+    public static final int SIZE=42;
+    public static final int SIZECALL=43;
+    public static final int STRING=44;
+    public static final int THEN=45;
+    public static final int TRUE=46;
+    public static final int WHILE=47;
+    public static final int WRITE=48;
+    public static final int WS=49;
 
     // delegates
     public Parser[] getDelegates() {
@@ -367,22 +364,22 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree char_literal8_tree=null;
         AslTree char_literal10_tree=null;
-        RewriteRuleTokenStream stream_55=new RewriteRuleTokenStream(adaptor,"token 55");
-        RewriteRuleTokenStream stream_53=new RewriteRuleTokenStream(adaptor,"token 53");
+        RewriteRuleTokenStream stream_51=new RewriteRuleTokenStream(adaptor,"token 51");
+        RewriteRuleTokenStream stream_52=new RewriteRuleTokenStream(adaptor,"token 52");
         RewriteRuleSubtreeStream stream_paramlist=new RewriteRuleSubtreeStream(adaptor,"rule paramlist");
         try {
             // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:70:9: ( '(' ( paramlist )? ')' -> ^( PARAMS ( paramlist )? ) )
             // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:70:11: '(' ( paramlist )? ')'
             {
-            char_literal8=(Token)match(input,53,FOLLOW_53_in_params263);  
-            stream_53.add(char_literal8);
+            char_literal8=(Token)match(input,51,FOLLOW_51_in_params263);  
+            stream_51.add(char_literal8);
 
 
             // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:70:15: ( paramlist )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==ID||LA2_0==52) ) {
+            if ( (LA2_0==ID||LA2_0==50) ) {
                 alt2=1;
             }
             switch (alt2) {
@@ -402,8 +399,8 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            char_literal10=(Token)match(input,55,FOLLOW_55_in_params268);  
-            stream_55.add(char_literal10);
+            char_literal10=(Token)match(input,52,FOLLOW_52_in_params268);  
+            stream_52.add(char_literal10);
 
 
             // AST REWRITE
@@ -508,7 +505,7 @@ public TreeAdaptor getTreeAdaptor() {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==56) ) {
+                if ( (LA3_0==53) ) {
                     alt3=1;
                 }
 
@@ -517,7 +514,7 @@ public TreeAdaptor getTreeAdaptor() {
             	case 1 :
             	    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:74:19: ',' ! param
             	    {
-            	    char_literal12=(Token)match(input,56,FOLLOW_56_in_paramlist297); 
+            	    char_literal12=(Token)match(input,53,FOLLOW_53_in_paramlist297); 
 
             	    pushFollow(FOLLOW_param_in_paramlist300);
             	    param13=param();
@@ -579,15 +576,15 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree id_tree=null;
         AslTree char_literal14_tree=null;
+        RewriteRuleTokenStream stream_50=new RewriteRuleTokenStream(adaptor,"token 50");
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
-        RewriteRuleTokenStream stream_52=new RewriteRuleTokenStream(adaptor,"token 52");
 
         try {
             // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:79:9: ( '&' id= ID -> ^( PREF[$id,$id.text] ) |id= ID -> ^( PVALUE[$id,$id.text] ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==52) ) {
+            if ( (LA4_0==50) ) {
                 alt4=1;
             }
             else if ( (LA4_0==ID) ) {
@@ -604,8 +601,8 @@ public TreeAdaptor getTreeAdaptor() {
                 case 1 :
                     // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:79:13: '&' id= ID
                     {
-                    char_literal14=(Token)match(input,52,FOLLOW_52_in_param325);  
-                    stream_52.add(char_literal14);
+                    char_literal14=(Token)match(input,50,FOLLOW_50_in_param325);  
+                    stream_50.add(char_literal14);
 
 
                     id=(Token)match(input,ID,FOLLOW_ID_in_param329);  
@@ -725,7 +722,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
         AslTree char_literal16_tree=null;
-        RewriteRuleTokenStream stream_58=new RewriteRuleTokenStream(adaptor,"token 58");
+        RewriteRuleTokenStream stream_55=new RewriteRuleTokenStream(adaptor,"token 55");
         RewriteRuleSubtreeStream stream_instruction=new RewriteRuleSubtreeStream(adaptor,"rule instruction");
         try {
             // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:85:9: ( instruction ( ';' instruction )* -> ^( LIST_INSTR ( instruction )+ ) )
@@ -744,7 +741,7 @@ public TreeAdaptor getTreeAdaptor() {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==58) ) {
+                if ( (LA5_0==55) ) {
                     alt5=1;
                 }
 
@@ -753,8 +750,8 @@ public TreeAdaptor getTreeAdaptor() {
             	case 1 :
             	    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:85:27: ';' instruction
             	    {
-            	    char_literal16=(Token)match(input,58,FOLLOW_58_in_block_instructions391);  
-            	    stream_58.add(char_literal16);
+            	    char_literal16=(Token)match(input,55,FOLLOW_55_in_block_instructions391);  
+            	    stream_55.add(char_literal16);
 
 
             	    pushFollow(FOLLOW_instruction_in_block_instructions393);
@@ -873,10 +870,10 @@ public TreeAdaptor getTreeAdaptor() {
                 {
                 int LA6_1 = input.LA(2);
 
-                if ( (LA6_1==EQUAL||LA6_1==59) ) {
+                if ( (LA6_1==EQUAL||LA6_1==56) ) {
                     alt6=1;
                 }
-                else if ( (LA6_1==53) ) {
+                else if ( (LA6_1==51) ) {
                     alt6=4;
                 }
                 else {
@@ -917,7 +914,7 @@ public TreeAdaptor getTreeAdaptor() {
             case ENDFUNC:
             case ENDIF:
             case ENDWHILE:
-            case 58:
+            case 55:
                 {
                 alt6=8;
                 }
@@ -1109,7 +1106,7 @@ public TreeAdaptor getTreeAdaptor() {
                 if ( (LA7_1==EQUAL) ) {
                     alt7=1;
                 }
-                else if ( (LA7_1==59) ) {
+                else if ( (LA7_1==56) ) {
                     alt7=2;
                 }
                 else {
@@ -1496,7 +1493,7 @@ public TreeAdaptor getTreeAdaptor() {
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==FALSE||LA9_0==ID||LA9_0==INT||LA9_0==MINUS||LA9_0==NOT||LA9_0==PLUS||LA9_0==SUM||LA9_0==TRUE||LA9_0==53) ) {
+            if ( (LA9_0==FALSE||LA9_0==ID||LA9_0==INT||LA9_0==MINUS||LA9_0==NOT||LA9_0==PLUS||LA9_0==TRUE||LA9_0==51) ) {
                 alt9=1;
             }
             switch (alt9) {
@@ -1584,10 +1581,10 @@ public TreeAdaptor getTreeAdaptor() {
             if ( (LA10_0==ID) ) {
                 int LA10_1 = input.LA(2);
 
-                if ( (LA10_1==59) ) {
+                if ( (LA10_1==56) ) {
                     alt10=2;
                 }
-                else if ( ((LA10_1 >= ELSE && LA10_1 <= ENDWHILE)||LA10_1==58) ) {
+                else if ( ((LA10_1 >= ELSE && LA10_1 <= ENDWHILE)||LA10_1==55) ) {
                     alt10=1;
                 }
                 else {
@@ -1699,7 +1696,7 @@ public TreeAdaptor getTreeAdaptor() {
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==FALSE||LA11_0==ID||LA11_0==INT||LA11_0==MINUS||LA11_0==NOT||LA11_0==PLUS||LA11_0==SUM||LA11_0==TRUE||LA11_0==53) ) {
+            if ( (LA11_0==FALSE||LA11_0==ID||LA11_0==INT||LA11_0==MINUS||LA11_0==NOT||LA11_0==PLUS||LA11_0==TRUE||LA11_0==51) ) {
                 alt11=1;
             }
             else if ( (LA11_0==STRING) ) {
@@ -2486,7 +2483,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "factor"
-    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:141:1: factor : ( NOT ^| PLUS ^| MINUS ^)? factorial ;
+    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:141:1: factor : ( NOT ^| PLUS ^| MINUS ^)? atom ;
     public final AslParser.factor_return factor() throws RecognitionException {
         AslParser.factor_return retval = new AslParser.factor_return();
         retval.start = input.LT(1);
@@ -2497,7 +2494,7 @@ public TreeAdaptor getTreeAdaptor() {
         Token NOT72=null;
         Token PLUS73=null;
         Token MINUS74=null;
-        AslParser.factorial_return factorial75 =null;
+        AslParser.atom_return atom75 =null;
 
 
         AslTree NOT72_tree=null;
@@ -2505,8 +2502,8 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree MINUS74_tree=null;
 
         try {
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:141:9: ( ( NOT ^| PLUS ^| MINUS ^)? factorial )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:141:13: ( NOT ^| PLUS ^| MINUS ^)? factorial
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:141:9: ( ( NOT ^| PLUS ^| MINUS ^)? atom )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:141:13: ( NOT ^| PLUS ^| MINUS ^)? atom
             {
             root_0 = (AslTree)adaptor.nil();
 
@@ -2572,12 +2569,12 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            pushFollow(FOLLOW_factorial_in_factor1068);
-            factorial75=factorial();
+            pushFollow(FOLLOW_atom_in_factor1068);
+            atom75=atom();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, factorial75.getTree());
+            adaptor.addChild(root_0, atom75.getTree());
 
             }
 
@@ -2603,96 +2600,6 @@ public TreeAdaptor getTreeAdaptor() {
     // $ANTLR end "factor"
 
 
-    public static class factorial_return extends ParserRuleReturnScope {
-        AslTree tree;
-        public Object getTree() { return tree; }
-    };
-
-
-    // $ANTLR start "factorial"
-    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:144:1: factorial : atom ( FACT ^)* ;
-    public final AslParser.factorial_return factorial() throws RecognitionException {
-        AslParser.factorial_return retval = new AslParser.factorial_return();
-        retval.start = input.LT(1);
-
-
-        AslTree root_0 = null;
-
-        Token FACT77=null;
-        AslParser.atom_return atom76 =null;
-
-
-        AslTree FACT77_tree=null;
-
-        try {
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:144:10: ( atom ( FACT ^)* )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:144:13: atom ( FACT ^)*
-            {
-            root_0 = (AslTree)adaptor.nil();
-
-
-            pushFollow(FOLLOW_atom_in_factorial1085);
-            atom76=atom();
-
-            state._fsp--;
-
-            adaptor.addChild(root_0, atom76.getTree());
-
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:144:18: ( FACT ^)*
-            loop21:
-            do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
-
-                if ( (LA21_0==FACT) ) {
-                    alt21=1;
-                }
-
-
-                switch (alt21) {
-            	case 1 :
-            	    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:144:19: FACT ^
-            	    {
-            	    FACT77=(Token)match(input,FACT,FOLLOW_FACT_in_factorial1088); 
-            	    FACT77_tree = 
-            	    (AslTree)adaptor.create(FACT77)
-            	    ;
-            	    root_0 = (AslTree)adaptor.becomeRoot(FACT77_tree, root_0);
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop21;
-                }
-            } while (true);
-
-
-            }
-
-            retval.stop = input.LT(-1);
-
-
-            retval.tree = (AslTree)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (AslTree)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-
-        finally {
-        	// do for sure before leaving
-        }
-        return retval;
-    }
-    // $ANTLR end "factorial"
-
-
     public static class atom_return extends ParserRuleReturnScope {
         AslTree tree;
         public Object getTree() { return tree; }
@@ -2700,7 +2607,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "atom"
-    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:150:1: atom : ( ID ( '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] ID ) | -> ID ) | array_access | INT | (b= TRUE |b= FALSE ) -> ^( BOOLEAN[$b,$b.text] ) | funcall (ac= '[' expr ']' -> ^( ARRAY_ACCESS[$ac, \"ARRAY_ACCESS\"] funcall expr ) | '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] funcall ) | -> funcall ) | suma | '(' ! expr ')' !);
+    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:147:1: atom : ( ID ( '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] ID ) | -> ID ) | array_access | INT | (b= TRUE |b= FALSE ) -> ^( BOOLEAN[$b,$b.text] ) | funcall (ac= '[' expr ']' -> ^( ARRAY_ACCESS[$ac, \"ARRAY_ACCESS\"] funcall expr ) | '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] funcall ) | -> funcall ) | '(' ! expr ')' !);
     public final AslParser.atom_return atom() throws RecognitionException {
         AslParser.atom_return retval = new AslParser.atom_return();
         retval.start = input.LT(1);
@@ -2711,58 +2618,56 @@ public TreeAdaptor getTreeAdaptor() {
         Token s=null;
         Token b=null;
         Token ac=null;
-        Token ID78=null;
-        Token char_literal79=null;
-        Token INT81=null;
+        Token ID76=null;
+        Token char_literal77=null;
+        Token INT79=null;
+        Token char_literal82=null;
+        Token char_literal83=null;
         Token char_literal84=null;
-        Token char_literal85=null;
-        Token char_literal87=null;
-        Token char_literal89=null;
-        AslParser.array_access_return array_access80 =null;
+        Token char_literal86=null;
+        AslParser.array_access_return array_access78 =null;
 
-        AslParser.funcall_return funcall82 =null;
+        AslParser.funcall_return funcall80 =null;
 
-        AslParser.expr_return expr83 =null;
+        AslParser.expr_return expr81 =null;
 
-        AslParser.suma_return suma86 =null;
-
-        AslParser.expr_return expr88 =null;
+        AslParser.expr_return expr85 =null;
 
 
         AslTree s_tree=null;
         AslTree b_tree=null;
         AslTree ac_tree=null;
-        AslTree ID78_tree=null;
-        AslTree char_literal79_tree=null;
-        AslTree INT81_tree=null;
+        AslTree ID76_tree=null;
+        AslTree char_literal77_tree=null;
+        AslTree INT79_tree=null;
+        AslTree char_literal82_tree=null;
+        AslTree char_literal83_tree=null;
         AslTree char_literal84_tree=null;
-        AslTree char_literal85_tree=null;
-        AslTree char_literal87_tree=null;
-        AslTree char_literal89_tree=null;
+        AslTree char_literal86_tree=null;
+        RewriteRuleTokenStream stream_56=new RewriteRuleTokenStream(adaptor,"token 56");
         RewriteRuleTokenStream stream_57=new RewriteRuleTokenStream(adaptor,"token 57");
-        RewriteRuleTokenStream stream_59=new RewriteRuleTokenStream(adaptor,"token 59");
         RewriteRuleTokenStream stream_SIZE=new RewriteRuleTokenStream(adaptor,"token SIZE");
         RewriteRuleTokenStream stream_TRUE=new RewriteRuleTokenStream(adaptor,"token TRUE");
         RewriteRuleTokenStream stream_FALSE=new RewriteRuleTokenStream(adaptor,"token FALSE");
-        RewriteRuleTokenStream stream_60=new RewriteRuleTokenStream(adaptor,"token 60");
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
+        RewriteRuleTokenStream stream_54=new RewriteRuleTokenStream(adaptor,"token 54");
         RewriteRuleSubtreeStream stream_funcall=new RewriteRuleSubtreeStream(adaptor,"rule funcall");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:150:9: ( ID ( '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] ID ) | -> ID ) | array_access | INT | (b= TRUE |b= FALSE ) -> ^( BOOLEAN[$b,$b.text] ) | funcall (ac= '[' expr ']' -> ^( ARRAY_ACCESS[$ac, \"ARRAY_ACCESS\"] funcall expr ) | '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] funcall ) | -> funcall ) | suma | '(' ! expr ')' !)
-            int alt25=7;
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:147:9: ( ID ( '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] ID ) | -> ID ) | array_access | INT | (b= TRUE |b= FALSE ) -> ^( BOOLEAN[$b,$b.text] ) | funcall (ac= '[' expr ']' -> ^( ARRAY_ACCESS[$ac, \"ARRAY_ACCESS\"] funcall expr ) | '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] funcall ) | -> funcall ) | '(' ! expr ')' !)
+            int alt24=6;
             switch ( input.LA(1) ) {
             case ID:
                 {
                 switch ( input.LA(2) ) {
-                case 59:
+                case 56:
                     {
-                    alt25=2;
+                    alt24=2;
                     }
                     break;
-                case 53:
+                case 51:
                     {
-                    alt25=5;
+                    alt24=5;
                     }
                     break;
                 case AND:
@@ -2773,7 +2678,6 @@ public TreeAdaptor getTreeAdaptor() {
                 case ENDIF:
                 case ENDWHILE:
                 case EQUAL:
-                case FACT:
                 case GE:
                 case GT:
                 case LE:
@@ -2785,18 +2689,18 @@ public TreeAdaptor getTreeAdaptor() {
                 case OR:
                 case PLUS:
                 case THEN:
+                case 52:
+                case 53:
+                case 54:
                 case 55:
-                case 56:
                 case 57:
-                case 58:
-                case 60:
                     {
-                    alt25=1;
+                    alt24=1;
                     }
                     break;
                 default:
                     NoViableAltException nvae =
-                        new NoViableAltException("", 25, 1, input);
+                        new NoViableAltException("", 24, 1, input);
 
                     throw nvae;
 
@@ -2806,67 +2710,62 @@ public TreeAdaptor getTreeAdaptor() {
                 break;
             case INT:
                 {
-                alt25=3;
+                alt24=3;
                 }
                 break;
             case FALSE:
             case TRUE:
                 {
-                alt25=4;
+                alt24=4;
                 }
                 break;
-            case SUM:
+            case 51:
                 {
-                alt25=6;
-                }
-                break;
-            case 53:
-                {
-                alt25=7;
+                alt24=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
+                    new NoViableAltException("", 24, 0, input);
 
                 throw nvae;
 
             }
 
-            switch (alt25) {
+            switch (alt24) {
                 case 1 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:150:13: ID ( '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] ID ) | -> ID )
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:147:13: ID ( '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] ID ) | -> ID )
                     {
-                    ID78=(Token)match(input,ID,FOLLOW_ID_in_atom1116);  
-                    stream_ID.add(ID78);
+                    ID76=(Token)match(input,ID,FOLLOW_ID_in_atom1093);  
+                    stream_ID.add(ID76);
 
 
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:150:16: ( '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] ID ) | -> ID )
-                    int alt22=2;
-                    int LA22_0 = input.LA(1);
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:147:16: ( '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] ID ) | -> ID )
+                    int alt21=2;
+                    int LA21_0 = input.LA(1);
 
-                    if ( (LA22_0==57) ) {
-                        alt22=1;
+                    if ( (LA21_0==54) ) {
+                        alt21=1;
                     }
-                    else if ( (LA22_0==AND||(LA22_0 >= DIV && LA22_0 <= EQUAL)||LA22_0==FACT||(LA22_0 >= GE && LA22_0 <= GT)||LA22_0==LE||(LA22_0 >= LT && LA22_0 <= MUL)||(LA22_0 >= NOT_EQUAL && LA22_0 <= OR)||LA22_0==PLUS||LA22_0==THEN||(LA22_0 >= 55 && LA22_0 <= 56)||LA22_0==58||LA22_0==60) ) {
-                        alt22=2;
+                    else if ( (LA21_0==AND||(LA21_0 >= DIV && LA21_0 <= EQUAL)||(LA21_0 >= GE && LA21_0 <= GT)||LA21_0==LE||(LA21_0 >= LT && LA21_0 <= MUL)||(LA21_0 >= NOT_EQUAL && LA21_0 <= OR)||LA21_0==PLUS||LA21_0==THEN||(LA21_0 >= 52 && LA21_0 <= 53)||LA21_0==55||LA21_0==57) ) {
+                        alt21=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 22, 0, input);
+                            new NoViableAltException("", 21, 0, input);
 
                         throw nvae;
 
                     }
-                    switch (alt22) {
+                    switch (alt21) {
                         case 1 :
-                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:150:18: '.' s= SIZE
+                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:147:18: '.' s= SIZE
                             {
-                            char_literal79=(Token)match(input,57,FOLLOW_57_in_atom1120);  
-                            stream_57.add(char_literal79);
+                            char_literal77=(Token)match(input,54,FOLLOW_54_in_atom1097);  
+                            stream_54.add(char_literal77);
 
 
-                            s=(Token)match(input,SIZE,FOLLOW_SIZE_in_atom1124);  
+                            s=(Token)match(input,SIZE,FOLLOW_SIZE_in_atom1101);  
                             stream_SIZE.add(s);
 
 
@@ -2881,9 +2780,9 @@ public TreeAdaptor getTreeAdaptor() {
                             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                             root_0 = (AslTree)adaptor.nil();
-                            // 150:30: -> ^( SIZECALL[$s, \"SIZE\"] ID )
+                            // 147:30: -> ^( SIZECALL[$s, \"SIZE\"] ID )
                             {
-                                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:150:33: ^( SIZECALL[$s, \"SIZE\"] ID )
+                                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:147:33: ^( SIZECALL[$s, \"SIZE\"] ID )
                                 {
                                 AslTree root_1 = (AslTree)adaptor.nil();
                                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -2905,7 +2804,7 @@ public TreeAdaptor getTreeAdaptor() {
                             }
                             break;
                         case 2 :
-                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:151:30: 
+                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:148:28: 
                             {
                             // AST REWRITE
                             // elements: ID
@@ -2918,7 +2817,7 @@ public TreeAdaptor getTreeAdaptor() {
                             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                             root_0 = (AslTree)adaptor.nil();
-                            // 151:30: -> ID
+                            // 148:28: -> ID
                             {
                                 adaptor.addChild(root_0, 
                                 stream_ID.nextNode()
@@ -2938,69 +2837,69 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:153:13: array_access
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:150:13: array_access
                     {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_array_access_in_atom1198);
-                    array_access80=array_access();
+                    pushFollow(FOLLOW_array_access_in_atom1174);
+                    array_access78=array_access();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, array_access80.getTree());
+                    adaptor.addChild(root_0, array_access78.getTree());
 
                     }
                     break;
                 case 3 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:154:13: INT
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:151:13: INT
                     {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    INT81=(Token)match(input,INT,FOLLOW_INT_in_atom1212); 
-                    INT81_tree = 
-                    (AslTree)adaptor.create(INT81)
+                    INT79=(Token)match(input,INT,FOLLOW_INT_in_atom1188); 
+                    INT79_tree = 
+                    (AslTree)adaptor.create(INT79)
                     ;
-                    adaptor.addChild(root_0, INT81_tree);
+                    adaptor.addChild(root_0, INT79_tree);
 
 
                     }
                     break;
                 case 4 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:155:13: (b= TRUE |b= FALSE )
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:152:13: (b= TRUE |b= FALSE )
                     {
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:155:13: (b= TRUE |b= FALSE )
-                    int alt23=2;
-                    int LA23_0 = input.LA(1);
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:152:13: (b= TRUE |b= FALSE )
+                    int alt22=2;
+                    int LA22_0 = input.LA(1);
 
-                    if ( (LA23_0==TRUE) ) {
-                        alt23=1;
+                    if ( (LA22_0==TRUE) ) {
+                        alt22=1;
                     }
-                    else if ( (LA23_0==FALSE) ) {
-                        alt23=2;
+                    else if ( (LA22_0==FALSE) ) {
+                        alt22=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 23, 0, input);
+                            new NoViableAltException("", 22, 0, input);
 
                         throw nvae;
 
                     }
-                    switch (alt23) {
+                    switch (alt22) {
                         case 1 :
-                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:155:14: b= TRUE
+                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:152:14: b= TRUE
                             {
-                            b=(Token)match(input,TRUE,FOLLOW_TRUE_in_atom1229);  
+                            b=(Token)match(input,TRUE,FOLLOW_TRUE_in_atom1205);  
                             stream_TRUE.add(b);
 
 
                             }
                             break;
                         case 2 :
-                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:155:23: b= FALSE
+                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:152:23: b= FALSE
                             {
-                            b=(Token)match(input,FALSE,FOLLOW_FALSE_in_atom1235);  
+                            b=(Token)match(input,FALSE,FOLLOW_FALSE_in_atom1211);  
                             stream_FALSE.add(b);
 
 
@@ -3021,9 +2920,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (AslTree)adaptor.nil();
-                    // 155:33: -> ^( BOOLEAN[$b,$b.text] )
+                    // 152:33: -> ^( BOOLEAN[$b,$b.text] )
                     {
-                        // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:155:36: ^( BOOLEAN[$b,$b.text] )
+                        // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:152:36: ^( BOOLEAN[$b,$b.text] )
                         {
                         AslTree root_1 = (AslTree)adaptor.nil();
                         root_1 = (AslTree)adaptor.becomeRoot(
@@ -3041,26 +2940,26 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:156:13: funcall (ac= '[' expr ']' -> ^( ARRAY_ACCESS[$ac, \"ARRAY_ACCESS\"] funcall expr ) | '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] funcall ) | -> funcall )
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:153:13: funcall (ac= '[' expr ']' -> ^( ARRAY_ACCESS[$ac, \"ARRAY_ACCESS\"] funcall expr ) | '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] funcall ) | -> funcall )
                     {
-                    pushFollow(FOLLOW_funcall_in_atom1258);
-                    funcall82=funcall();
+                    pushFollow(FOLLOW_funcall_in_atom1234);
+                    funcall80=funcall();
 
                     state._fsp--;
 
-                    stream_funcall.add(funcall82.getTree());
+                    stream_funcall.add(funcall80.getTree());
 
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:156:21: (ac= '[' expr ']' -> ^( ARRAY_ACCESS[$ac, \"ARRAY_ACCESS\"] funcall expr ) | '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] funcall ) | -> funcall )
-                    int alt24=3;
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:153:21: (ac= '[' expr ']' -> ^( ARRAY_ACCESS[$ac, \"ARRAY_ACCESS\"] funcall expr ) | '.' s= SIZE -> ^( SIZECALL[$s, \"SIZE\"] funcall ) | -> funcall )
+                    int alt23=3;
                     switch ( input.LA(1) ) {
-                    case 59:
+                    case 56:
                         {
-                        alt24=1;
+                        alt23=1;
                         }
                         break;
-                    case 57:
+                    case 54:
                         {
-                        alt24=2;
+                        alt23=2;
                         }
                         break;
                     case AND:
@@ -3071,7 +2970,6 @@ public TreeAdaptor getTreeAdaptor() {
                     case ENDIF:
                     case ENDWHILE:
                     case EQUAL:
-                    case FACT:
                     case GE:
                     case GT:
                     case LE:
@@ -3083,39 +2981,39 @@ public TreeAdaptor getTreeAdaptor() {
                     case OR:
                     case PLUS:
                     case THEN:
+                    case 52:
+                    case 53:
                     case 55:
-                    case 56:
-                    case 58:
-                    case 60:
+                    case 57:
                         {
-                        alt24=3;
+                        alt23=3;
                         }
                         break;
                     default:
                         NoViableAltException nvae =
-                            new NoViableAltException("", 24, 0, input);
+                            new NoViableAltException("", 23, 0, input);
 
                         throw nvae;
 
                     }
 
-                    switch (alt24) {
+                    switch (alt23) {
                         case 1 :
-                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:156:22: ac= '[' expr ']'
+                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:153:22: ac= '[' expr ']'
                             {
-                            ac=(Token)match(input,59,FOLLOW_59_in_atom1263);  
-                            stream_59.add(ac);
+                            ac=(Token)match(input,56,FOLLOW_56_in_atom1239);  
+                            stream_56.add(ac);
 
 
-                            pushFollow(FOLLOW_expr_in_atom1265);
-                            expr83=expr();
+                            pushFollow(FOLLOW_expr_in_atom1241);
+                            expr81=expr();
 
                             state._fsp--;
 
-                            stream_expr.add(expr83.getTree());
+                            stream_expr.add(expr81.getTree());
 
-                            char_literal84=(Token)match(input,60,FOLLOW_60_in_atom1267);  
-                            stream_60.add(char_literal84);
+                            char_literal82=(Token)match(input,57,FOLLOW_57_in_atom1243);  
+                            stream_57.add(char_literal82);
 
 
                             // AST REWRITE
@@ -3129,9 +3027,9 @@ public TreeAdaptor getTreeAdaptor() {
                             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                             root_0 = (AslTree)adaptor.nil();
-                            // 156:38: -> ^( ARRAY_ACCESS[$ac, \"ARRAY_ACCESS\"] funcall expr )
+                            // 153:38: -> ^( ARRAY_ACCESS[$ac, \"ARRAY_ACCESS\"] funcall expr )
                             {
-                                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:156:41: ^( ARRAY_ACCESS[$ac, \"ARRAY_ACCESS\"] funcall expr )
+                                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:153:41: ^( ARRAY_ACCESS[$ac, \"ARRAY_ACCESS\"] funcall expr )
                                 {
                                 AslTree root_1 = (AslTree)adaptor.nil();
                                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -3153,13 +3051,13 @@ public TreeAdaptor getTreeAdaptor() {
                             }
                             break;
                         case 2 :
-                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:157:23: '.' s= SIZE
+                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:154:23: '.' s= SIZE
                             {
-                            char_literal85=(Token)match(input,57,FOLLOW_57_in_atom1302);  
-                            stream_57.add(char_literal85);
+                            char_literal83=(Token)match(input,54,FOLLOW_54_in_atom1278);  
+                            stream_54.add(char_literal83);
 
 
-                            s=(Token)match(input,SIZE,FOLLOW_SIZE_in_atom1306);  
+                            s=(Token)match(input,SIZE,FOLLOW_SIZE_in_atom1282);  
                             stream_SIZE.add(s);
 
 
@@ -3174,9 +3072,9 @@ public TreeAdaptor getTreeAdaptor() {
                             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                             root_0 = (AslTree)adaptor.nil();
-                            // 157:40: -> ^( SIZECALL[$s, \"SIZE\"] funcall )
+                            // 154:40: -> ^( SIZECALL[$s, \"SIZE\"] funcall )
                             {
-                                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:157:43: ^( SIZECALL[$s, \"SIZE\"] funcall )
+                                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:154:43: ^( SIZECALL[$s, \"SIZE\"] funcall )
                                 {
                                 AslTree root_1 = (AslTree)adaptor.nil();
                                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -3196,7 +3094,7 @@ public TreeAdaptor getTreeAdaptor() {
                             }
                             break;
                         case 3 :
-                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:158:38: 
+                            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:155:38: 
                             {
                             // AST REWRITE
                             // elements: funcall
@@ -3209,7 +3107,7 @@ public TreeAdaptor getTreeAdaptor() {
                             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                             root_0 = (AslTree)adaptor.nil();
-                            // 158:38: -> funcall
+                            // 155:38: -> funcall
                             {
                                 adaptor.addChild(root_0, stream_funcall.nextTree());
 
@@ -3227,36 +3125,21 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:160:13: suma
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:157:13: '(' ! expr ')' !
                     {
                     root_0 = (AslTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_suma_in_atom1398);
-                    suma86=suma();
+                    char_literal84=(Token)match(input,51,FOLLOW_51_in_atom1374); 
+
+                    pushFollow(FOLLOW_expr_in_atom1377);
+                    expr85=expr();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, suma86.getTree());
+                    adaptor.addChild(root_0, expr85.getTree());
 
-                    }
-                    break;
-                case 7 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:161:13: '(' ! expr ')' !
-                    {
-                    root_0 = (AslTree)adaptor.nil();
-
-
-                    char_literal87=(Token)match(input,53,FOLLOW_53_in_atom1412); 
-
-                    pushFollow(FOLLOW_expr_in_atom1415);
-                    expr88=expr();
-
-                    state._fsp--;
-
-                    adaptor.addChild(root_0, expr88.getTree());
-
-                    char_literal89=(Token)match(input,55,FOLLOW_55_in_atom1417); 
+                    char_literal86=(Token)match(input,52,FOLLOW_52_in_atom1379); 
 
                     }
                     break;
@@ -3291,7 +3174,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "array_access"
-    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:164:1: array_access : ID ac= '[' expr ']' -> ^( ARRAY_ACCESS[$ac,\"ARRAY_ACCESS\"] ID expr ) ;
+    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:162:1: array_access : ID ac= '[' expr ']' -> ^( ARRAY_ACCESS[$ac,\"ARRAY_ACCESS\"] ID expr ) ;
     public final AslParser.array_access_return array_access() throws RecognitionException {
         AslParser.array_access_return retval = new AslParser.array_access_return();
         retval.start = input.LT(1);
@@ -3300,43 +3183,43 @@ public TreeAdaptor getTreeAdaptor() {
         AslTree root_0 = null;
 
         Token ac=null;
-        Token ID90=null;
-        Token char_literal92=null;
-        AslParser.expr_return expr91 =null;
+        Token ID87=null;
+        Token char_literal89=null;
+        AslParser.expr_return expr88 =null;
 
 
         AslTree ac_tree=null;
-        AslTree ID90_tree=null;
-        AslTree char_literal92_tree=null;
-        RewriteRuleTokenStream stream_59=new RewriteRuleTokenStream(adaptor,"token 59");
-        RewriteRuleTokenStream stream_60=new RewriteRuleTokenStream(adaptor,"token 60");
+        AslTree ID87_tree=null;
+        AslTree char_literal89_tree=null;
+        RewriteRuleTokenStream stream_56=new RewriteRuleTokenStream(adaptor,"token 56");
+        RewriteRuleTokenStream stream_57=new RewriteRuleTokenStream(adaptor,"token 57");
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:165:9: ( ID ac= '[' expr ']' -> ^( ARRAY_ACCESS[$ac,\"ARRAY_ACCESS\"] ID expr ) )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:165:13: ID ac= '[' expr ']'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:163:9: ( ID ac= '[' expr ']' -> ^( ARRAY_ACCESS[$ac,\"ARRAY_ACCESS\"] ID expr ) )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:163:13: ID ac= '[' expr ']'
             {
-            ID90=(Token)match(input,ID,FOLLOW_ID_in_array_access1447);  
-            stream_ID.add(ID90);
+            ID87=(Token)match(input,ID,FOLLOW_ID_in_array_access1411);  
+            stream_ID.add(ID87);
 
 
-            ac=(Token)match(input,59,FOLLOW_59_in_array_access1451);  
-            stream_59.add(ac);
+            ac=(Token)match(input,56,FOLLOW_56_in_array_access1415);  
+            stream_56.add(ac);
 
 
-            pushFollow(FOLLOW_expr_in_array_access1453);
-            expr91=expr();
+            pushFollow(FOLLOW_expr_in_array_access1417);
+            expr88=expr();
 
             state._fsp--;
 
-            stream_expr.add(expr91.getTree());
+            stream_expr.add(expr88.getTree());
 
-            char_literal92=(Token)match(input,60,FOLLOW_60_in_array_access1455);  
-            stream_60.add(char_literal92);
+            char_literal89=(Token)match(input,57,FOLLOW_57_in_array_access1419);  
+            stream_57.add(char_literal89);
 
 
             // AST REWRITE
-            // elements: ID, expr
+            // elements: expr, ID
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -3346,9 +3229,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (AslTree)adaptor.nil();
-            // 165:32: -> ^( ARRAY_ACCESS[$ac,\"ARRAY_ACCESS\"] ID expr )
+            // 163:32: -> ^( ARRAY_ACCESS[$ac,\"ARRAY_ACCESS\"] ID expr )
             {
-                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:165:35: ^( ARRAY_ACCESS[$ac,\"ARRAY_ACCESS\"] ID expr )
+                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:163:35: ^( ARRAY_ACCESS[$ac,\"ARRAY_ACCESS\"] ID expr )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -3400,7 +3283,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "funcall"
-    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:169:1: funcall : ID '(' ( expr_list )? ')' -> ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) ) ;
+    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:167:1: funcall : ID '(' ( expr_list )? ')' -> ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) ) ;
     public final AslParser.funcall_return funcall() throws RecognitionException {
         AslParser.funcall_return retval = new AslParser.funcall_return();
         retval.start = input.LT(1);
@@ -3408,48 +3291,48 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token ID93=null;
-        Token char_literal94=null;
-        Token char_literal96=null;
-        AslParser.expr_list_return expr_list95 =null;
+        Token ID90=null;
+        Token char_literal91=null;
+        Token char_literal93=null;
+        AslParser.expr_list_return expr_list92 =null;
 
 
-        AslTree ID93_tree=null;
-        AslTree char_literal94_tree=null;
-        AslTree char_literal96_tree=null;
-        RewriteRuleTokenStream stream_55=new RewriteRuleTokenStream(adaptor,"token 55");
+        AslTree ID90_tree=null;
+        AslTree char_literal91_tree=null;
+        AslTree char_literal93_tree=null;
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
-        RewriteRuleTokenStream stream_53=new RewriteRuleTokenStream(adaptor,"token 53");
+        RewriteRuleTokenStream stream_51=new RewriteRuleTokenStream(adaptor,"token 51");
+        RewriteRuleTokenStream stream_52=new RewriteRuleTokenStream(adaptor,"token 52");
         RewriteRuleSubtreeStream stream_expr_list=new RewriteRuleSubtreeStream(adaptor,"rule expr_list");
         try {
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:169:9: ( ID '(' ( expr_list )? ')' -> ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) ) )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:169:13: ID '(' ( expr_list )? ')'
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:167:9: ( ID '(' ( expr_list )? ')' -> ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) ) )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:167:13: ID '(' ( expr_list )? ')'
             {
-            ID93=(Token)match(input,ID,FOLLOW_ID_in_funcall1486);  
-            stream_ID.add(ID93);
+            ID90=(Token)match(input,ID,FOLLOW_ID_in_funcall1450);  
+            stream_ID.add(ID90);
 
 
-            char_literal94=(Token)match(input,53,FOLLOW_53_in_funcall1488);  
-            stream_53.add(char_literal94);
+            char_literal91=(Token)match(input,51,FOLLOW_51_in_funcall1452);  
+            stream_51.add(char_literal91);
 
 
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:169:20: ( expr_list )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:167:20: ( expr_list )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA26_0==FALSE||LA26_0==ID||LA26_0==INT||LA26_0==MINUS||LA26_0==NOT||LA26_0==PLUS||LA26_0==SUM||LA26_0==TRUE||LA26_0==53) ) {
-                alt26=1;
+            if ( (LA25_0==FALSE||LA25_0==ID||LA25_0==INT||LA25_0==MINUS||LA25_0==NOT||LA25_0==PLUS||LA25_0==TRUE||LA25_0==51) ) {
+                alt25=1;
             }
-            switch (alt26) {
+            switch (alt25) {
                 case 1 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:169:20: expr_list
+                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:167:20: expr_list
                     {
-                    pushFollow(FOLLOW_expr_list_in_funcall1490);
-                    expr_list95=expr_list();
+                    pushFollow(FOLLOW_expr_list_in_funcall1454);
+                    expr_list92=expr_list();
 
                     state._fsp--;
 
-                    stream_expr_list.add(expr_list95.getTree());
+                    stream_expr_list.add(expr_list92.getTree());
 
                     }
                     break;
@@ -3457,8 +3340,8 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            char_literal96=(Token)match(input,55,FOLLOW_55_in_funcall1493);  
-            stream_55.add(char_literal96);
+            char_literal93=(Token)match(input,52,FOLLOW_52_in_funcall1457);  
+            stream_52.add(char_literal93);
 
 
             // AST REWRITE
@@ -3472,9 +3355,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (AslTree)adaptor.nil();
-            // 169:35: -> ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) )
+            // 167:35: -> ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) )
             {
-                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:169:38: ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) )
+                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:167:38: ^( FUNCALL ID ^( ARGLIST ( expr_list )? ) )
                 {
                 AslTree root_1 = (AslTree)adaptor.nil();
                 root_1 = (AslTree)adaptor.becomeRoot(
@@ -3485,14 +3368,14 @@ public TreeAdaptor getTreeAdaptor() {
                 stream_ID.nextNode()
                 );
 
-                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:169:51: ^( ARGLIST ( expr_list )? )
+                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:167:51: ^( ARGLIST ( expr_list )? )
                 {
                 AslTree root_2 = (AslTree)adaptor.nil();
                 root_2 = (AslTree)adaptor.becomeRoot(
                 (AslTree)adaptor.create(ARGLIST, "ARGLIST")
                 , root_2);
 
-                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:169:61: ( expr_list )?
+                // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:167:61: ( expr_list )?
                 if ( stream_expr_list.hasNext() ) {
                     adaptor.addChild(root_2, stream_expr_list.nextTree());
 
@@ -3541,7 +3424,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "expr_list"
-    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:173:1: expr_list : expr ( ',' ! expr )* ;
+    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:171:1: expr_list : expr ( ',' ! expr )* ;
     public final AslParser.expr_list_return expr_list() throws RecognitionException {
         AslParser.expr_list_return retval = new AslParser.expr_list_return();
         retval.start = input.LT(1);
@@ -3549,57 +3432,57 @@ public TreeAdaptor getTreeAdaptor() {
 
         AslTree root_0 = null;
 
-        Token char_literal98=null;
-        AslParser.expr_return expr97 =null;
+        Token char_literal95=null;
+        AslParser.expr_return expr94 =null;
 
-        AslParser.expr_return expr99 =null;
+        AslParser.expr_return expr96 =null;
 
 
-        AslTree char_literal98_tree=null;
+        AslTree char_literal95_tree=null;
 
         try {
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:173:10: ( expr ( ',' ! expr )* )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:173:13: expr ( ',' ! expr )*
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:171:10: ( expr ( ',' ! expr )* )
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:171:13: expr ( ',' ! expr )*
             {
             root_0 = (AslTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_expr_in_expr_list1526);
-            expr97=expr();
+            pushFollow(FOLLOW_expr_in_expr_list1490);
+            expr94=expr();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, expr97.getTree());
+            adaptor.addChild(root_0, expr94.getTree());
 
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:173:18: ( ',' ! expr )*
-            loop27:
+            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:171:18: ( ',' ! expr )*
+            loop26:
             do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( (LA27_0==56) ) {
-                    alt27=1;
+                if ( (LA26_0==53) ) {
+                    alt26=1;
                 }
 
 
-                switch (alt27) {
+                switch (alt26) {
             	case 1 :
-            	    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:173:19: ',' ! expr
+            	    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:171:19: ',' ! expr
             	    {
-            	    char_literal98=(Token)match(input,56,FOLLOW_56_in_expr_list1529); 
+            	    char_literal95=(Token)match(input,53,FOLLOW_53_in_expr_list1493); 
 
-            	    pushFollow(FOLLOW_expr_in_expr_list1532);
-            	    expr99=expr();
+            	    pushFollow(FOLLOW_expr_in_expr_list1496);
+            	    expr96=expr();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, expr99.getTree());
+            	    adaptor.addChild(root_0, expr96.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop27;
+            	    break loop26;
                 }
             } while (true);
 
@@ -3627,341 +3510,30 @@ public TreeAdaptor getTreeAdaptor() {
     }
     // $ANTLR end "expr_list"
 
-
-    public static class suma_return extends ParserRuleReturnScope {
-        AslTree tree;
-        public Object getTree() { return tree; }
-    };
-
-
-    // $ANTLR start "suma"
-    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:176:1: suma : SUM ( '(' sum_list ')' -> sum_list | '()' -> INT[\"0\"] ) ;
-    public final AslParser.suma_return suma() throws RecognitionException {
-        AslParser.suma_return retval = new AslParser.suma_return();
-        retval.start = input.LT(1);
-
-
-        AslTree root_0 = null;
-
-        Token SUM100=null;
-        Token char_literal101=null;
-        Token char_literal103=null;
-        Token string_literal104=null;
-        AslParser.sum_list_return sum_list102 =null;
-
-
-        AslTree SUM100_tree=null;
-        AslTree char_literal101_tree=null;
-        AslTree char_literal103_tree=null;
-        AslTree string_literal104_tree=null;
-        RewriteRuleTokenStream stream_55=new RewriteRuleTokenStream(adaptor,"token 55");
-        RewriteRuleTokenStream stream_SUM=new RewriteRuleTokenStream(adaptor,"token SUM");
-        RewriteRuleTokenStream stream_53=new RewriteRuleTokenStream(adaptor,"token 53");
-        RewriteRuleTokenStream stream_54=new RewriteRuleTokenStream(adaptor,"token 54");
-        RewriteRuleSubtreeStream stream_sum_list=new RewriteRuleSubtreeStream(adaptor,"rule sum_list");
-        try {
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:176:9: ( SUM ( '(' sum_list ')' -> sum_list | '()' -> INT[\"0\"] ) )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:176:13: SUM ( '(' sum_list ')' -> sum_list | '()' -> INT[\"0\"] )
-            {
-            SUM100=(Token)match(input,SUM,FOLLOW_SUM_in_suma1556);  
-            stream_SUM.add(SUM100);
-
-
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:176:17: ( '(' sum_list ')' -> sum_list | '()' -> INT[\"0\"] )
-            int alt28=2;
-            int LA28_0 = input.LA(1);
-
-            if ( (LA28_0==53) ) {
-                alt28=1;
-            }
-            else if ( (LA28_0==54) ) {
-                alt28=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
-
-                throw nvae;
-
-            }
-            switch (alt28) {
-                case 1 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:176:18: '(' sum_list ')'
-                    {
-                    char_literal101=(Token)match(input,53,FOLLOW_53_in_suma1559);  
-                    stream_53.add(char_literal101);
-
-
-                    pushFollow(FOLLOW_sum_list_in_suma1561);
-                    sum_list102=sum_list();
-
-                    state._fsp--;
-
-                    stream_sum_list.add(sum_list102.getTree());
-
-                    char_literal103=(Token)match(input,55,FOLLOW_55_in_suma1563);  
-                    stream_55.add(char_literal103);
-
-
-                    // AST REWRITE
-                    // elements: sum_list
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (AslTree)adaptor.nil();
-                    // 176:35: -> sum_list
-                    {
-                        adaptor.addChild(root_0, stream_sum_list.nextTree());
-
-                    }
-
-
-                    retval.tree = root_0;
-
-                    }
-                    break;
-                case 2 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:177:19: '()'
-                    {
-                    string_literal104=(Token)match(input,54,FOLLOW_54_in_suma1587);  
-                    stream_54.add(string_literal104);
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (AslTree)adaptor.nil();
-                    // 177:35: -> INT[\"0\"]
-                    {
-                        adaptor.addChild(root_0, 
-                        (AslTree)adaptor.create(INT, "0")
-                        );
-
-                    }
-
-
-                    retval.tree = root_0;
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-            retval.stop = input.LT(-1);
-
-
-            retval.tree = (AslTree)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (AslTree)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-
-        finally {
-        	// do for sure before leaving
-        }
-        return retval;
-    }
-    // $ANTLR end "suma"
-
-
-    public static class sum_list_return extends ParserRuleReturnScope {
-        AslTree tree;
-        public Object getTree() { return tree; }
-    };
-
-
-    // $ANTLR start "sum_list"
-    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:181:1: sum_list : expr ( ',' sum_list -> ^( PLUS[\"+\"] expr sum_list ) | -> expr ) ;
-    public final AslParser.sum_list_return sum_list() throws RecognitionException {
-        AslParser.sum_list_return retval = new AslParser.sum_list_return();
-        retval.start = input.LT(1);
-
-
-        AslTree root_0 = null;
-
-        Token char_literal106=null;
-        AslParser.expr_return expr105 =null;
-
-        AslParser.sum_list_return sum_list107 =null;
-
-
-        AslTree char_literal106_tree=null;
-        RewriteRuleTokenStream stream_56=new RewriteRuleTokenStream(adaptor,"token 56");
-        RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
-        RewriteRuleSubtreeStream stream_sum_list=new RewriteRuleSubtreeStream(adaptor,"rule sum_list");
-        try {
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:181:9: ( expr ( ',' sum_list -> ^( PLUS[\"+\"] expr sum_list ) | -> expr ) )
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:181:13: expr ( ',' sum_list -> ^( PLUS[\"+\"] expr sum_list ) | -> expr )
-            {
-            pushFollow(FOLLOW_expr_in_sum_list1639);
-            expr105=expr();
-
-            state._fsp--;
-
-            stream_expr.add(expr105.getTree());
-
-            // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:181:18: ( ',' sum_list -> ^( PLUS[\"+\"] expr sum_list ) | -> expr )
-            int alt29=2;
-            int LA29_0 = input.LA(1);
-
-            if ( (LA29_0==56) ) {
-                alt29=1;
-            }
-            else if ( (LA29_0==55) ) {
-                alt29=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 29, 0, input);
-
-                throw nvae;
-
-            }
-            switch (alt29) {
-                case 1 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:181:19: ',' sum_list
-                    {
-                    char_literal106=(Token)match(input,56,FOLLOW_56_in_sum_list1642);  
-                    stream_56.add(char_literal106);
-
-
-                    pushFollow(FOLLOW_sum_list_in_sum_list1644);
-                    sum_list107=sum_list();
-
-                    state._fsp--;
-
-                    stream_sum_list.add(sum_list107.getTree());
-
-                    // AST REWRITE
-                    // elements: sum_list, expr
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (AslTree)adaptor.nil();
-                    // 181:32: -> ^( PLUS[\"+\"] expr sum_list )
-                    {
-                        // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:181:35: ^( PLUS[\"+\"] expr sum_list )
-                        {
-                        AslTree root_1 = (AslTree)adaptor.nil();
-                        root_1 = (AslTree)adaptor.becomeRoot(
-                        (AslTree)adaptor.create(PLUS, "+")
-                        , root_1);
-
-                        adaptor.addChild(root_1, stream_expr.nextTree());
-
-                        adaptor.addChild(root_1, stream_sum_list.nextTree());
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-
-                    retval.tree = root_0;
-
-                    }
-                    break;
-                case 2 :
-                    // /home/brutus729/Documents/FIB/CL/labs/ASL/Asl/src/parser/Asl.g:182:32: 
-                    {
-                    // AST REWRITE
-                    // elements: expr
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (AslTree)adaptor.nil();
-                    // 182:32: -> expr
-                    {
-                        adaptor.addChild(root_0, stream_expr.nextTree());
-
-                    }
-
-
-                    retval.tree = root_0;
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-            retval.stop = input.LT(-1);
-
-
-            retval.tree = (AslTree)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (AslTree)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-
-        finally {
-        	// do for sure before leaving
-        }
-        return retval;
-    }
-    // $ANTLR end "sum_list"
-
     // Delegated rules
 
 
  
 
-    public static final BitSet FOLLOW_func_in_prog189 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_func_in_prog189 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_EOF_in_prog192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FUNC_in_func234 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_ID_in_func237 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_params_in_func239 = new BitSet(new long[]{0x0406060003000000L});
+    public static final BitSet FOLLOW_FUNC_in_func234 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_ID_in_func237 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_params_in_func239 = new BitSet(new long[]{0x0081830001800000L});
     public static final BitSet FOLLOW_block_instructions_in_func241 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_ENDFUNC_in_func243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_params263 = new BitSet(new long[]{0x0090000001000000L});
-    public static final BitSet FOLLOW_paramlist_in_params265 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_55_in_params268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_param_in_paramlist294 = new BitSet(new long[]{0x0100000000000002L});
-    public static final BitSet FOLLOW_56_in_paramlist297 = new BitSet(new long[]{0x0010000001000000L});
-    public static final BitSet FOLLOW_param_in_paramlist300 = new BitSet(new long[]{0x0100000000000002L});
-    public static final BitSet FOLLOW_52_in_param325 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_51_in_params263 = new BitSet(new long[]{0x0014000000800000L});
+    public static final BitSet FOLLOW_paramlist_in_params265 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_52_in_params268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_param_in_paramlist294 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_53_in_paramlist297 = new BitSet(new long[]{0x0004000000800000L});
+    public static final BitSet FOLLOW_param_in_paramlist300 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_50_in_param325 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_ID_in_param329 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ID_in_param352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_instruction_in_block_instructions388 = new BitSet(new long[]{0x0400000000000002L});
-    public static final BitSet FOLLOW_58_in_block_instructions391 = new BitSet(new long[]{0x0406060003000000L});
-    public static final BitSet FOLLOW_instruction_in_block_instructions393 = new BitSet(new long[]{0x0400000000000002L});
+    public static final BitSet FOLLOW_instruction_in_block_instructions388 = new BitSet(new long[]{0x0080000000000002L});
+    public static final BitSet FOLLOW_55_in_block_instructions391 = new BitSet(new long[]{0x0081830001800000L});
+    public static final BitSet FOLLOW_instruction_in_block_instructions393 = new BitSet(new long[]{0x0080000000000002L});
     public static final BitSet FOLLOW_assign_in_instruction432 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ite_stmt_in_instruction456 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_while_stmt_in_instruction478 = new BitSet(new long[]{0x0000000000000002L});
@@ -3970,95 +3542,84 @@ public TreeAdaptor getTreeAdaptor() {
     public static final BitSet FOLLOW_read_in_instruction540 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_write_in_instruction566 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ID_in_assign627 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_EQUAL_in_assign631 = new BitSet(new long[]{0x0021404485080000L});
+    public static final BitSet FOLLOW_EQUAL_in_assign631 = new BitSet(new long[]{0x0008402242840000L});
     public static final BitSet FOLLOW_expr_in_assign633 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_array_access_in_assign658 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_EQUAL_in_assign662 = new BitSet(new long[]{0x0021404485080000L});
+    public static final BitSet FOLLOW_EQUAL_in_assign662 = new BitSet(new long[]{0x0008402242840000L});
     public static final BitSet FOLLOW_expr_in_assign664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IF_in_ite_stmt698 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_expr_in_ite_stmt701 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_THEN_in_ite_stmt703 = new BitSet(new long[]{0x0406060003000000L});
+    public static final BitSet FOLLOW_IF_in_ite_stmt698 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_expr_in_ite_stmt701 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_THEN_in_ite_stmt703 = new BitSet(new long[]{0x0081830001800000L});
     public static final BitSet FOLLOW_block_instructions_in_ite_stmt706 = new BitSet(new long[]{0x0000000000005000L});
-    public static final BitSet FOLLOW_ELSE_in_ite_stmt709 = new BitSet(new long[]{0x0406060003000000L});
+    public static final BitSet FOLLOW_ELSE_in_ite_stmt709 = new BitSet(new long[]{0x0081830001800000L});
     public static final BitSet FOLLOW_block_instructions_in_ite_stmt712 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_ENDIF_in_ite_stmt716 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WHILE_in_while_stmt742 = new BitSet(new long[]{0x0021404485080000L});
+    public static final BitSet FOLLOW_WHILE_in_while_stmt742 = new BitSet(new long[]{0x0008402242840000L});
     public static final BitSet FOLLOW_expr_in_while_stmt745 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_DO_in_while_stmt747 = new BitSet(new long[]{0x0406060003000000L});
+    public static final BitSet FOLLOW_DO_in_while_stmt747 = new BitSet(new long[]{0x0081830001800000L});
     public static final BitSet FOLLOW_block_instructions_in_while_stmt750 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_ENDWHILE_in_while_stmt752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RETURN_in_return_stmt777 = new BitSet(new long[]{0x0021404485080002L});
+    public static final BitSet FOLLOW_RETURN_in_return_stmt777 = new BitSet(new long[]{0x0008402242840002L});
     public static final BitSet FOLLOW_expr_in_return_stmt780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_READ_in_read804 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_READ_in_read804 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_ID_in_read808 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_array_access_in_read812 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WRITE_in_write835 = new BitSet(new long[]{0x0021604485080000L});
+    public static final BitSet FOLLOW_WRITE_in_write835 = new BitSet(new long[]{0x0008502242840000L});
     public static final BitSet FOLLOW_expr_in_write839 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_STRING_in_write843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_boolterm_in_expr868 = new BitSet(new long[]{0x0000001000000002L});
-    public static final BitSet FOLLOW_OR_in_expr871 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_boolterm_in_expr874 = new BitSet(new long[]{0x0000001000000002L});
+    public static final BitSet FOLLOW_boolterm_in_expr868 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_OR_in_expr871 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_boolterm_in_expr874 = new BitSet(new long[]{0x0000000800000002L});
     public static final BitSet FOLLOW_boolfact_in_boolterm894 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_AND_in_boolterm897 = new BitSet(new long[]{0x0021404485080000L});
+    public static final BitSet FOLLOW_AND_in_boolterm897 = new BitSet(new long[]{0x0008402242840000L});
     public static final BitSet FOLLOW_boolfact_in_boolterm900 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_num_expr_in_boolfact920 = new BitSet(new long[]{0x0000000848C10002L});
-    public static final BitSet FOLLOW_EQUAL_in_boolfact924 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_NOT_EQUAL_in_boolfact929 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_LT_in_boolfact934 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_LE_in_boolfact939 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_GT_in_boolfact944 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_GE_in_boolfact949 = new BitSet(new long[]{0x0021404485080000L});
+    public static final BitSet FOLLOW_num_expr_in_boolfact920 = new BitSet(new long[]{0x0000000424610002L});
+    public static final BitSet FOLLOW_EQUAL_in_boolfact924 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_NOT_EQUAL_in_boolfact929 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_LT_in_boolfact934 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_LE_in_boolfact939 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_GT_in_boolfact944 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_GE_in_boolfact949 = new BitSet(new long[]{0x0008402242840000L});
     public static final BitSet FOLLOW_num_expr_in_boolfact953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_term_in_num_expr973 = new BitSet(new long[]{0x0000004080000002L});
-    public static final BitSet FOLLOW_PLUS_in_num_expr978 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_MINUS_in_num_expr983 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_term_in_num_expr987 = new BitSet(new long[]{0x0000004080000002L});
-    public static final BitSet FOLLOW_factor_in_term1011 = new BitSet(new long[]{0x0000000300000402L});
-    public static final BitSet FOLLOW_MUL_in_term1016 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_DIV_in_term1021 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_MOD_in_term1026 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_factor_in_term1030 = new BitSet(new long[]{0x0000000300000402L});
-    public static final BitSet FOLLOW_NOT_in_factor1053 = new BitSet(new long[]{0x0021400005080000L});
-    public static final BitSet FOLLOW_PLUS_in_factor1058 = new BitSet(new long[]{0x0021400005080000L});
-    public static final BitSet FOLLOW_MINUS_in_factor1063 = new BitSet(new long[]{0x0021400005080000L});
-    public static final BitSet FOLLOW_factorial_in_factor1068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_atom_in_factorial1085 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_FACT_in_factorial1088 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_ID_in_atom1116 = new BitSet(new long[]{0x0200000000000002L});
-    public static final BitSet FOLLOW_57_in_atom1120 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_SIZE_in_atom1124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_array_access_in_atom1198 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INT_in_atom1212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TRUE_in_atom1229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FALSE_in_atom1235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_funcall_in_atom1258 = new BitSet(new long[]{0x0A00000000000002L});
-    public static final BitSet FOLLOW_59_in_atom1263 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_expr_in_atom1265 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_60_in_atom1267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_57_in_atom1302 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_SIZE_in_atom1306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_suma_in_atom1398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_atom1412 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_expr_in_atom1415 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_55_in_atom1417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_array_access1447 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_59_in_array_access1451 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_expr_in_array_access1453 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_60_in_array_access1455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_funcall1486 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_53_in_funcall1488 = new BitSet(new long[]{0x00A1404485080000L});
-    public static final BitSet FOLLOW_expr_list_in_funcall1490 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_55_in_funcall1493 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expr_in_expr_list1526 = new BitSet(new long[]{0x0100000000000002L});
-    public static final BitSet FOLLOW_56_in_expr_list1529 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_expr_in_expr_list1532 = new BitSet(new long[]{0x0100000000000002L});
-    public static final BitSet FOLLOW_SUM_in_suma1556 = new BitSet(new long[]{0x0060000000000000L});
-    public static final BitSet FOLLOW_53_in_suma1559 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_sum_list_in_suma1561 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_55_in_suma1563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_suma1587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expr_in_sum_list1639 = new BitSet(new long[]{0x0100000000000002L});
-    public static final BitSet FOLLOW_56_in_sum_list1642 = new BitSet(new long[]{0x0021404485080000L});
-    public static final BitSet FOLLOW_sum_list_in_sum_list1644 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_term_in_num_expr973 = new BitSet(new long[]{0x0000002040000002L});
+    public static final BitSet FOLLOW_PLUS_in_num_expr978 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_MINUS_in_num_expr983 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_term_in_num_expr987 = new BitSet(new long[]{0x0000002040000002L});
+    public static final BitSet FOLLOW_factor_in_term1011 = new BitSet(new long[]{0x0000000180000402L});
+    public static final BitSet FOLLOW_MUL_in_term1016 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_DIV_in_term1021 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_MOD_in_term1026 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_factor_in_term1030 = new BitSet(new long[]{0x0000000180000402L});
+    public static final BitSet FOLLOW_NOT_in_factor1053 = new BitSet(new long[]{0x0008400002840000L});
+    public static final BitSet FOLLOW_PLUS_in_factor1058 = new BitSet(new long[]{0x0008400002840000L});
+    public static final BitSet FOLLOW_MINUS_in_factor1063 = new BitSet(new long[]{0x0008400002840000L});
+    public static final BitSet FOLLOW_atom_in_factor1068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_atom1093 = new BitSet(new long[]{0x0040000000000002L});
+    public static final BitSet FOLLOW_54_in_atom1097 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_SIZE_in_atom1101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_array_access_in_atom1174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INT_in_atom1188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TRUE_in_atom1205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FALSE_in_atom1211 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_funcall_in_atom1234 = new BitSet(new long[]{0x0140000000000002L});
+    public static final BitSet FOLLOW_56_in_atom1239 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_expr_in_atom1241 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_57_in_atom1243 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_atom1278 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_SIZE_in_atom1282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_atom1374 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_expr_in_atom1377 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_52_in_atom1379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_array_access1411 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_56_in_array_access1415 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_expr_in_array_access1417 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_57_in_array_access1419 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_funcall1450 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_funcall1452 = new BitSet(new long[]{0x0018402242840000L});
+    public static final BitSet FOLLOW_expr_list_in_funcall1454 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_52_in_funcall1457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_expr_list1490 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_53_in_expr_list1493 = new BitSet(new long[]{0x0008402242840000L});
+    public static final BitSet FOLLOW_expr_in_expr_list1496 = new BitSet(new long[]{0x0020000000000002L});
 
 }
