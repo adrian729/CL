@@ -138,18 +138,15 @@ num_expr:   term ( (PLUS^ | MINUS^) term)*
 term    :   factor ( (MUL^ | DIV^ | MOD^) factor)*
         ;
 
-factor  :   (NOT^ | PLUS^ | MINUS^)? factorial
-        ;
-
-factorial:  atom (FACT^)*
+factor  :   (NOT^ | PLUS^ | MINUS^)? atom
         ;
 
 // Atom of the expressions (variables, integer and boolean literals).
 // An atom can also be a function call or another expression
 // in parenthesis
 atom    :   ID ( '.' s=SIZE  -> ^(SIZECALL[$s, "SIZE"] ID)
-               |             -> ID
-               )
+                |          -> ID
+                )
         |   array_access
         |   INT
         |   (b=TRUE | b=FALSE)  -> ^(BOOLEAN[$b,$b.text])
@@ -157,30 +154,21 @@ atom    :   ID ( '.' s=SIZE  -> ^(SIZECALL[$s, "SIZE"] ID)
                     | '.' s=SIZE       -> ^(SIZECALL[$s, "SIZE"] funcall)
                     |                -> funcall
                     )
-        |   suma
         |   '('! expr ')'!
         ;
+
+
 
 array_access  
         :   ID ac='[' expr ']' -> ^(ARRAY_ACCESS[$ac,"ARRAY_ACCESS"] ID expr)
         ;
 
-// A function call has a lists of arguments in parenthesis (possibly empty)
+// A function call has a lits of arguments in parenthesis (possibly empty)
 funcall :   ID '(' expr_list? ')' -> ^(FUNCALL ID ^(ARGLIST expr_list?))
         ;
 
 // A list of expressions separated by commas
 expr_list:  expr (','! expr)*
-        ;
-
-suma    :   SUM ('(' sum_list ')' -> sum_list
-                | '()'            -> INT["0"]
-                )
-        ;
-
-sum_list:   expr (',' sum_list -> ^(PLUS["+"] expr sum_list)
-                 |             -> expr
-                 )  
         ;
 
 // Basic tokens
@@ -195,7 +183,6 @@ MINUS   : '-' ;
 MUL     : '*';
 DIV     : '/';
 MOD     : '%' ;
-FACT    : '!' ;
 NOT     : 'not';
 AND     : 'and' ;
 OR      : 'or' ;    
@@ -212,11 +199,10 @@ RETURN  : 'return' ;
 READ    : 'read' ;
 WRITE   : 'write' ;
 SIZE    : 'size' ;
-SUM     : 'sum' ;
 TRUE    : 'true' ;
 FALSE   : 'false';
-ID      : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
-INT     : '0'..'9'+ ;
+ID      :   ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
+INT     :   '0'..'9'+ ;
 
 // C-style comments
 COMMENT : '//' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}

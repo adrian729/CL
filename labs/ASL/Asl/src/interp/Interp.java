@@ -393,14 +393,6 @@ public class Interp {
                     checkBoolean(value);
                     value.setValue(!value.getBooleanValue());
                     break;
-                case AslLexer.FACT:
-                    checkInteger(value);
-                    int f_res = 1;
-                    for(int i = 2; i <= value.getIntegerValue(); i++){
-                        f_res *= i;
-                    }
-                    value.setValue(f_res);
-                    break;
                 default: assert false; // Should never happen
             }
             setLineNumber(previous_line);

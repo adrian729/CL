@@ -1,6 +1,0 @@
-#Asl make files
-/parser/*.java
-/parser/*.tokens 
-/classes
-/javadoc
-/bin
