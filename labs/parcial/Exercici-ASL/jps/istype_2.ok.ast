@@ -1,0 +1,1 @@
+(LIST_FUNCTIONS (func main PARAMS (LIST_INSTR (:= s 0) (foreach v (BRACES_LEXPRS true (+ 34 1) 12 9 false 23 true (* 19 2) 17) (LIST_INSTR (if (not (isint v)) (LIST_INSTR (:= filter v)) (LIST_INSTR (if filter (LIST_INSTR (:= s (+ s v)))))))) (write s) (write "%n") (write (and (isint s) (not (isbool s)))) (write "%n") (write (or (not (isint s)) (isbool s))) (write "%n"))))

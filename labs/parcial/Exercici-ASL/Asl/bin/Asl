@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec java -enableassertions -jar /home2/users/alumnes/1183123/Documents/parcial/Exercici-ASL/Asl/bin/Asl.jar "$@"

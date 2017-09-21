@@ -1,0 +1,14 @@
+#! /bin/bash
+
+EXDIR=`dirname $0`
+ANTLR3=`readlink -f $EXDIR/..`/antlr3
+
+d=`dirname $1`
+f=`basename $1 .asl`
+$EXDIR/Asl/bin/Asl -ast $d/$f.student.dot -dot $1
+if (test -f $d/$f.student.dot); then
+    dot -T pdf -o $d/$f.student.pdf $d/$f.student.dot
+    rm $d/$f.student.dot
+fi
+
+

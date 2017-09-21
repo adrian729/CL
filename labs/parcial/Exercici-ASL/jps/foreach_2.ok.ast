@@ -1,0 +1,1 @@
+(LIST_FUNCTIONS (func f (PARAMS v) (LIST_INSTR (:= v 0) (return 0))) (func main PARAMS (LIST_INSTR (:= x 1) (:= y 3) (:= k 0) (foreach a (BRACKETS_LEXPRS x (- y 1) (* (FUNCALL f (ARGLIST x)) y) 14) (LIST_INSTR (:= k (- a k)) (:= x (+ x 1)))) (write k) (write "%n") (write (+ a x)) (write "%n"))))

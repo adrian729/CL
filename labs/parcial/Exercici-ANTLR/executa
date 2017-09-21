@@ -1,0 +1,16 @@
+#! /bin/bash
+
+EXDIR=`dirname $0`
+ANTLR3=`readlink -f $EXDIR/..`/antlr3
+
+# executar parser sobre el fitxer donat
+java -cp $ANTLR3/antlrworks-1.4.3.jar:$ANTLR3/antlr-3.4-complete.jar:$EXDIR/classes Dot $1
+
+# comprovar que el parser ha generat la sortida
+d=`dirname $1`
+f=`basename $1 .dot`
+if (test -f $d/$f.student.dot); then
+    dot -T pdf -o $d/$f.student.pdf $d/$f.student.dot
+    dot -T png -o $d/$f.student.png $d/$f.student.dot
+    rm $d/$f.student.dot
+fi

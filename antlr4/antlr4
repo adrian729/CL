@@ -1,0 +1,2 @@
+#!/bin/bash
+java -jar $ANTLR4/antlr-4.6-complete.jar "$@"

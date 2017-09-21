@@ -1,0 +1,1 @@
+(digraph Graf_3 (ELEMENTS A (-> B2 C1) (-> B4 C1) (-> C1 "Etiqueta 1") (-> "Etiqueta 1" 236) (-> 236 C1)))

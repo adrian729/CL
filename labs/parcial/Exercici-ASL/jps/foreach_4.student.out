@@ -1,0 +1,6 @@
+Runtime error (jps/foreach_4.asl, line 3): Expecting identical type expressions in foreach.
+---------------
+| Stack trace |
+---------------
+** Depth = 1
+|> main: line 3

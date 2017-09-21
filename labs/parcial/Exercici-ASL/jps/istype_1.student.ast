@@ -1,0 +1,1 @@
+(LIST_FUNCTIONS (func main PARAMS (LIST_INSTR (:= s 0) (:= i 0) (while (< i 5) (LIST_INSTR (if (= (% i 2) 0) (LIST_INSTR (:= n i)) (LIST_INSTR (:= n false))) (:= i (+ i 1)) (if (isint n) (LIST_INSTR (:= s (+ s (* n n)))) (LIST_INSTR (if (isbool n) (LIST_INSTR (:= s (/ s 2)))))))) (write s) (write "%n"))))

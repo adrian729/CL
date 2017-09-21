@@ -1,0 +1,1 @@
+(digraph Graf_5 (ELEMENTS (-> (-> B2 C1) A) (-> (subgraph cluster_AB (ELEMENTS (-> A B) (-> B A))) "Etiqueta ABC") (-> X_0 (subgraph cluster_X1 (ELEMENTS (-> (-> B3 "Node X") C6) (-> C6 0.7)))) (-> (subgraph cluster_Z (ELEMENTS (-> (-> X Y) Z))) (subgraph cluster_M (ELEMENTS (-> M N)))) (-> A 98.)))

@@ -1,0 +1,1 @@
+(LIST_FUNCTIONS (func main PARAMS (LIST_INSTR (:= a 34) (:= s 0) (foreach a (BRACES_LEXPRS (+ 2 1) a (* a 2)) (LIST_INSTR (:= s (+ s a)) (:= a (- a 1)))) (write a) (write "%n") (write s) (write "%n"))))
